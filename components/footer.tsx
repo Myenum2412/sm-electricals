@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Instagram, Facebook, Mail } from 'lucide-react'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp'
+import { Instagram, Facebook, Mail, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
@@ -55,7 +54,7 @@ export default function Footer() {
                             href="#"
                             aria-label="WhatsApp"
                             className="text-muted-foreground hover:text-primary transition-colors">
-                            <WhatsAppIcon sx={{ fontSize: 24 }} />
+                            <Phone className="size-6" />
                         </Link>
                         <Link
                             href="#"

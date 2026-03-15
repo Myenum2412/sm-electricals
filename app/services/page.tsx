@@ -6,6 +6,7 @@ import { generateBreadcrumbSchema, generateOrganizationSchema } from "@/lib/seo"
 import Image from "next/image"
 import { servicesMetadata } from "@/lib/meta"
 import StatsSection from "@/components/stats"
+import { HoverEffect } from "@/components/ui/card-hover-effect"
 
 export const metadata = servicesMetadata
 
@@ -24,26 +25,31 @@ function page() {
         {
             title: "Custom Panel Manufacturing",
             description: "We design and fabricate electrical panels tailored to the specific needs of each project, ensuring optimal performance and compliance with industry standards.",
+            link: "#",
             icon: "⚡"
         },
         {
             title: "Bulk Supply for Projects",
             description: "We work closely with contractors, developers, and electrical suppliers to deliver large-scale orders with consistent quality and on-time delivery.",
+            link: "#",
             icon: "📦"
         },
         {
             title: "Electrical System Consultation",
             description: "Our experienced team helps clients choose the right panel configurations and electrical systems based on their operational requirements.",
+            link: "#",
             icon: "🤝"
         },
         {
             title: "Installation Guidance",
             description: "We provide technical support and guidance during installation to ensure that electrical panels operate safely and efficiently.",
+            link: "#",
             icon: "🛠️"
         },
         {
             title: "Quality Testing & Assurance",
             description: "Every panel manufactured by SM Electrical undergoes thorough inspection and testing to guarantee reliability, safety, and long service life.",
+            link: "#",
             icon: "✅"
         }
     ]
@@ -101,19 +107,13 @@ function page() {
 
                     <div className="mb-16">
                         <h2 className="text-4xl font-bold text-foreground mb-6">Expert Electrical Services</h2>
-                        <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
+                        <p className="text-xl text-muted-foreground w-full leading-relaxed">
                             Beyond manufacturing, SM Electrical provides a range of services to support contractors, businesses, and industrial clients. Our team ensures that your power distribution systems are designed, delivered, and maintained to the highest standards.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                        {services.map((service, index) => (
-                            <div key={index} className="p-8 rounded-2xl bg-muted/50 border border-muted hover:border-primary/20 hover:bg-primary/[0.02] transition-all duration-300">
-                                <span className="text-4xl mb-4 block">{service.icon}</span>
-                                <h3 className="text-2xl font-bold mb-3 text-foreground">{service.title}</h3>
-                                <p className="text-muted-foreground leading-relaxed italic">{service.description}</p>
-                            </div>
-                        ))}
+                    <div className="mb-20">
+                        <HoverEffect items={services} />
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
