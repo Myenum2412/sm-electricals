@@ -51,6 +51,12 @@ function page() {
             description: "Every panel manufactured by SM Electrical undergoes thorough inspection and testing to guarantee reliability, safety, and long service life.",
             link: "#",
             icon: "✅"
+        },
+        {
+            title: "Annual Maintenance Contracts",
+            description: "We offer comprehensive annual maintenance contracts (AMC) for electrical panels and distribution systems to prevent unexpected downtime and ensure continuous operation.",
+            link: "#",
+            icon: "🔧"
         }
     ]
 
@@ -119,7 +125,7 @@ function page() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
                         <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-xl">
                             <Image
-                                src="/image/hero-1.jpg"
+                                src="/images/our-services-sm.png"
                                 alt="SM Electrical Quality Assurance"
                                 fill
                                 className="object-cover"

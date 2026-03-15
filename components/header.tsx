@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { Logo } from '@/components/logo'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
@@ -83,8 +83,9 @@ export const HeroHeader = () => {
                             <div className="flex w-full items-center justify-end gap-3 md:w-fit">
                                 <Button
                                     asChild
-                                    className="h-10 px-6 rounded-xl">
+                                    className="h-10 px-6 rounded-xl gap-2 font-medium">
                                     <Link href="/contact">
+                                        <Phone className="size-4" />
                                         <span>Contact</span>
                                     </Link>
                                 </Button>
