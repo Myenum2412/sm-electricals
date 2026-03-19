@@ -131,3 +131,11 @@ body {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

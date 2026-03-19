@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { HeroHeader } from "@/components/header";
-import Footer from "@/components/footer";
+import Footer from "@/components/mvpblocks/footer-main";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { Toaster } from "@/components/ui/sonner";
@@ -23,8 +23,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "SM Electrical",
-  description: "High-quality electrical solutions",
+  title: "SM ELECTRICAL",
+  description: "High-quality Electrical Solutions",
 };
 
 export default function RootLayout({

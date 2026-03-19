@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
+import { BlurFade } from '@/components/ui/blur-fade'
 import type { Variants } from 'motion/react'
 
 const transitionVariants: { item: Variants } = {
@@ -48,7 +49,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     as="h1"
                                     className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16">
-                                    Build and Ship 10x faster with NS
+                                    Reliable Electrical Solutions for Industrial Excellence
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
@@ -57,7 +58,7 @@ export default function HeroSection() {
                                     delay={0.5}
                                     as="p"
                                     className="mt-8 max-w-2xl text-pretty text-lg">
-                                    Tailwindcss highly customizable components for building modern websites and applications that look and feel the way you mean it.
+                                    Specializing in the manufacture of high-quality electrical panels and custom-engineered power distribution systems for commercial and industrial needs.
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -80,8 +81,8 @@ export default function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-5 text-base">
-                                            <Link href="#link">
-                                                <span className="text-nowrap">Start Building</span>
+                                            <Link href="/panels">
+                                                <span className="text-nowrap">View Products</span>
                                             </Link>
                                         </Button>
                                     </div>
@@ -91,44 +92,27 @@ export default function HeroSection() {
                                         size="lg"
                                         variant="ghost"
                                         className="h-10.5 rounded-xl px-5 text-base">
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Request a demo</span>
+                                        <Link href="/contact">
+                                            <span className="text-nowrap">Contact Us</span>
                                         </Link>
                                     </Button>
                                 </AnimatedGroup>
                             </div>
                         </div>
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            staggerChildren: 0.05,
-                                            delayChildren: 0.75,
-                                        },
-                                    },
-                                },
-                                ...transitionVariants,
-                            }}>
+                        <BlurFade delay={1} duration={0.8} inView>
                             <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                                    <Image
-                                        className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-                                        src="/mail2.png"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440"
-                                    />
-                                    <Image
-                                        className="z-2 border-border/25 aspect-15/8 relative rounded-2xl border dark:hidden"
-                                        src="/mail2-light.png"
-                                        alt="app screen"
-                                        width="2700"
-                                        height="1440"
+                                    <video
+                                        className="bg-background aspect-15/8 relative rounded-2xl w-full h-full object-cover"
+                                        src="/Factory 1.mov"
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
                                     />
                                 </div>
                             </div>
-                        </AnimatedGroup>
+                        </BlurFade>
                     </div>
                 </section>
                 <section className="bg-background pb-16 pt-16 md:pb-32">

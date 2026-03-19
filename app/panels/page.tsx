@@ -6,14 +6,15 @@ import { generateBreadcrumbSchema, generateOrganizationSchema } from "@/lib/seo"
 import Image from "next/image"
 import { panelsMetadata } from "@/lib/meta"
 import StatsSection from "@/components/stats"
-import { weddingGalleries } from "@/lib/assets"
-import { FocusCards } from "@/components/ui/focus-cards"
+import CustomEngineeringCTA from "@/components/custom-engineering-cta"
+import { ProductGrid } from "@/components/products/ProductGrid"
+import { panelSolutions } from "@/lib/data"
 
 export const metadata = panelsMetadata
 
 function page() {
     const organizationSchema = generateOrganizationSchema(
-        "SM Electrical",
+        "SM ELECTRICAL",
         "https://sm-electrical.in"
     )
 
@@ -22,11 +23,7 @@ function page() {
         { name: "Electrical Panels", url: "https://sm-electrical.in/panels" },
     ])
 
-    const panelSolutions = [
-        "Starter Panels", "SSB Panels", "Changeover Panels", "MV Panels",
-        "Drive Panels", "APFC Panels", "Fuse Panels", "LTCT Panels",
-        "ATS Panels", "Service Panels", "Double Pole Structures", "Lightning Arrestor Systems"
-    ]
+
 
     const highlights = [
         {
@@ -53,8 +50,8 @@ function page() {
             {/* Full width hero */}
             <div className="relative h-[500px] w-full overflow-hidden">
                 <Image
-                    src="/image/hero-3.jpg"
-                    alt="SM Electrical Panels"
+                    src="/images/panels.png"
+                    alt="SM ELECTRICAL Panels"
                     fill
                     className="object-cover object-center"
                     priority
@@ -90,44 +87,17 @@ function page() {
                         </BreadcrumbList>
                     </Breadcrumb>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-20">
-                        <div>
-                            <h2 className="text-4xl font-bold mb-6 text-foreground">Electrical Panels</h2>
-                            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed mb-8">
-                                <p>
-                                    SM Electrical manufactures a comprehensive range of high-performance electrical panels designed for industrial, commercial, and infrastructure applications.
-                                </p>
-                                <p>
-                                    Our panels are engineered to provide efficient power distribution, system protection, and reliable electrical control. Each panel is built using high-quality components and undergoes strict quality testing before delivery.
-                                </p>
-                                <p>
-                                    Whether for industrial plants, commercial complexes, or infrastructure projects, SM Electrical delivers panels designed for safety, performance, and durability.
-                                </p>
-                            </div>
-
-                            <div className="bg-primary/5 p-8 rounded-2xl border border-primary/20">
-                                <h3 className="text-2xl font-bold mb-6 text-foreground">Custom Engineering</h3>
-                                <p className="text-muted-foreground text-lg italic">
-                                    Our team designs panels tailored to specific electrical loads, operational environments, and project requirements.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="bg-muted/50 p-8 rounded-3xl border border-muted shadow-sm">
-                            <h3 className="text-2xl font-bold mb-8 text-foreground">Our Panel Solutions Include</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {panelSolutions.map((solution, index) => (
-                                    <div key={index} className="flex items-center gap-3">
-                                        <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                                        <span className="text-lg font-medium text-muted-foreground">{solution}</span>
-                                    </div>
-                                ))}
-                            </div>
+                    <div className="flex flex-col items-center text-center mb-16">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">All Products</h1>
+                        <div className="max-w-3xl text-muted-foreground text-lg leading-relaxed">
+                            <p>SM ELECTRICAL manufactures a comprehensive range of high-performance electrical panels designed for industrial, commercial, and infrastructure. Our panels are engineered to provide efficient power distribution, system protection, and reliable electrical control.</p>
                         </div>
                     </div>
 
+                    <ProductGrid products={panelSolutions} />
+
                     <div className="py-16 border-t border-b mb-20">
-                        <h2 className="text-4xl font-bold text-center mb-12">Why Choose SM Electrical Panels?</h2>
+                        <h2 className="text-4xl font-bold text-center mb-12">Why Choose SM ELECTRICAL Panels?</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                             {highlights.map((highlight, index) => (
                                 <div key={index} className="space-y-6">
@@ -148,22 +118,12 @@ function page() {
                         </div>
                     </div>
 
+                    {/* Custom Engineering*/}
+                    <CustomEngineeringCTA />
+
                     {/* Stats Section */}
                     <StatsSection />
 
-                    {/* Works Section */}
-                    <div className="py-12 md:py-20">
-                        <h2 className="text-4xl font-bold mb-12 text-center">Featured Installations</h2>
-                        <FocusCards
-                            cards={weddingGalleries.map((gallery) => ({
-                                title: gallery.title,
-                                src: gallery.coverImage || "/image/hero-1.jpg",
-                                subtitle: gallery.subtitle,
-                                href: gallery.href,
-                            }))}
-                            gridCols="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-                        />
-                    </div>
                 </div>
             </MaxWidthWrapper>
         </>

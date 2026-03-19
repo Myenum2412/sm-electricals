@@ -5,14 +5,16 @@ import React from "react"
 import { generateBreadcrumbSchema, generateOrganizationSchema } from "@/lib/seo"
 import Image from "next/image"
 import { servicesMetadata } from "@/lib/meta"
-import StatsSection from "@/components/stats"
+
 import { HoverEffect } from "@/components/ui/card-hover-effect"
 
 export const metadata = servicesMetadata
 
+import { services } from "@/lib/data"
+
 function page() {
     const organizationSchema = generateOrganizationSchema(
-        "SM Electrical",
+        "SM ELECTRICAL",
         "https://sm-electrical.in"
     )
 
@@ -20,45 +22,6 @@ function page() {
         { name: "Home", url: "https://sm-electrical.in" },
         { name: "Services", url: "https://sm-electrical.in/services" },
     ])
-
-    const services = [
-        {
-            title: "Custom Panel Manufacturing",
-            description: "We design and fabricate electrical panels tailored to the specific needs of each project, ensuring optimal performance and compliance with industry standards.",
-            link: "#",
-            icon: "⚡"
-        },
-        {
-            title: "Bulk Supply for Projects",
-            description: "We work closely with contractors, developers, and electrical suppliers to deliver large-scale orders with consistent quality and on-time delivery.",
-            link: "#",
-            icon: "📦"
-        },
-        {
-            title: "Electrical System Consultation",
-            description: "Our experienced team helps clients choose the right panel configurations and electrical systems based on their operational requirements.",
-            link: "#",
-            icon: "🤝"
-        },
-        {
-            title: "Installation Guidance",
-            description: "We provide technical support and guidance during installation to ensure that electrical panels operate safely and efficiently.",
-            link: "#",
-            icon: "🛠️"
-        },
-        {
-            title: "Quality Testing & Assurance",
-            description: "Every panel manufactured by SM Electrical undergoes thorough inspection and testing to guarantee reliability, safety, and long service life.",
-            link: "#",
-            icon: "✅"
-        },
-        {
-            title: "Annual Maintenance Contracts",
-            description: "We offer comprehensive annual maintenance contracts (AMC) for electrical panels and distribution systems to prevent unexpected downtime and ensure continuous operation.",
-            link: "#",
-            icon: "🔧"
-        }
-    ]
 
     return (
         <>
@@ -75,7 +38,7 @@ function page() {
             <div className="relative h-[500px] w-full overflow-hidden">
                 <Image
                     src="/images/our-services.png"
-                    alt="SM Electrical Services"
+                    alt="SM ELECTRICAL Services"
                     fill
                     className="object-cover object-center"
                     priority
@@ -114,11 +77,12 @@ function page() {
                     <div className="mb-16">
                         <h2 className="text-4xl font-bold text-foreground mb-6">Expert Electrical Services</h2>
                         <p className="text-xl text-muted-foreground w-full leading-relaxed">
-                            Beyond manufacturing, SM Electrical provides a range of services to support contractors, businesses, and industrial clients. Our team ensures that your power distribution systems are designed, delivered, and maintained to the highest standards.
+                            Beyond manufacturing, SM ELECTRICAL provides a range of services to support contractors, businesses, and industrial clients. Our team ensures that your power distribution systems are designed, delivered, and maintained to the highest standards.
                         </p>
                     </div>
 
-                    <div className="mb-20">
+                    <div className="mb-12 py-16 bg-secondary/10 rounded-3xl px-8 border border-secondary/20">
+                        <h1 className="text-4xl font-bold text-foreground mb-4">Our Comprehensive Electrical Solutions</h1>
                         <HoverEffect items={services} />
                     </div>
 
@@ -126,7 +90,7 @@ function page() {
                         <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-xl">
                             <Image
                                 src="/images/our-services-sm.png"
-                                alt="SM Electrical Quality Assurance"
+                                alt="SM ELECTRICAL Quality Assurance"
                                 fill
                                 className="object-cover"
                             />
@@ -153,8 +117,7 @@ function page() {
                         </div>
                     </div>
 
-                    {/* Stats Section */}
-                    <StatsSection />
+
                 </div>
             </MaxWidthWrapper>
         </>

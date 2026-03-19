@@ -1,3 +1,5 @@
+import { Phone, CheckCircle2 } from "lucide-react";
+
 export default function CTA2() {
   return (
     <div className="relative mx-auto mb-12 w-full max-w-7xl overflow-hidden rounded-[40px] bg-orange-500 py-10 px-8 sm:px-12 md:py-14 md:px-24">
@@ -23,11 +25,17 @@ export default function CTA2() {
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start sm:gap-6">
           <button className="flex w-full items-center justify-between rounded-full bg-black px-5 py-3 text-white transition-transform hover:scale-105 sm:w-[240px]">
-            <span className="font-semibold">Book a discovery call</span>
+            <span className="font-semibold flex items-center gap-2">
+              <Phone className="size-4" />
+              Book a discovery call
+            </span>
             <span className="h-5 w-5 flex-shrink-0 rounded-full bg-white"></span>
           </button>
           <button className="flex w-full items-center justify-between rounded-full border border-black/10 bg-black/20 px-5 py-3 text-white backdrop-blur-md transition-transform hover:scale-105 sm:w-[240px]">
-            <span className="font-medium">Test Your Samples</span>
+            <span className="font-medium flex items-center gap-2">
+              <CheckCircle2 className="size-4" />
+              Test Your Samples
+            </span>
             <span className="h-5 w-5 flex-shrink-0 rounded-full bg-white"></span>
           </button>
         </div>

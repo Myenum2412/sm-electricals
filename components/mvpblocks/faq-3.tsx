@@ -120,17 +120,17 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
 export default function Faq3() {
   const faqs: Omit<FAQItemProps, 'index'>[] = [
     {
-      question: 'What types of electrical panels does SM Electrical manufacture?',
+      question: 'What types of electrical panels does SM ELECTRICAL manufacture?',
       answer:
         'We manufacture a comprehensive range of high-performance electrical panels including Starter Panels, SSB Panels, Changeover Panels, MV Panels, APFC Panels, ATS Panels, and specialized industrial control systems.',
     },
     {
-      question: 'Does SM Electrical provide custom panel engineering?',
+      question: 'Does SM ELECTRICAL provide custom panel engineering?',
       answer:
         'Yes, our technical team specializes in custom engineering panels tailored to specific electrical loads, operational environments, and unique project requirements for industrial and commercial applications.',
     },
     {
-      question: 'How does SM Electrical ensure the quality of its panels?',
+      question: 'How does SM ELECTRICAL ensure the quality of its panels?',
       answer:
         'We maintain strict quality control from design and component selection to fabrication. Every panel undergoes thorough inspection and testing to guarantee safety, reliability, and long-term performance.',
     },

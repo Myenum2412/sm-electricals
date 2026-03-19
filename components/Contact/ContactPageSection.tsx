@@ -2,7 +2,8 @@
 
 import { useCallback, useState } from 'react';
 import { motion } from 'motion/react';
-import { Building2, PhoneCall, MailOpen, Send, Loader2, CheckCircle2, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Building2, PhoneCall, MailOpen, Send, Loader2, CheckCircle2, Facebook, Instagram, Linkedin, Twitter, Paperclip } from 'lucide-react';
+import { BlurFade } from '@/components/ui/blur-fade';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -24,6 +25,7 @@ export default function ContactPageSection() {
     name: '',
     email: '',
     message: '',
+    file: null as File | null,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -36,7 +38,7 @@ export default function ContactPageSection() {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
       toast.success('Your message has been sent successfully!');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', message: '', file: null });
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
@@ -52,11 +54,17 @@ export default function ContactPageSection() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setFormData(prev => ({ ...prev, file }));
+  };
+
 
 
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-4 md:px-6">
+        <br />
         {/* Breadcrumb Navigation */}
         <Breadcrumb>
           <BreadcrumbList>
@@ -70,6 +78,7 @@ export default function ContactPageSection() {
           </BreadcrumbList>
         </Breadcrumb>
 
+        <br />
         {/* Google Maps Section */}
         <div className="mb-16">
           <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg border border-border">
@@ -81,7 +90,7 @@ export default function ContactPageSection() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full"
-              title="SM Electrical Location"
+              title="SM ELECTRICAL Location"
             />
           </div>
         </div>
@@ -100,91 +109,70 @@ export default function ContactPageSection() {
                 Keep in touch with us
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                At SM Electrical, our commitment is simple — deliver dependable electrical solutions that power progress. Connect with us to discuss your electrical needs or request a professional consultation.
+                At SM ELECTRICAL, our commitment is simple deliver dependable electrical solutions that power progress. Connect with us to discuss your electrical needs or request a professional consultation.
               </p>
             </div>
 
             <div className="space-y-6">
               {/* Address */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="flex items-start gap-4"
-              >
-                <div className="mt-1 p-2 rounded-full bg-primary/10">
-                  <Building2 className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">Address</h3>
-                  <a
-                    href="https://maps.app.goo.gl/Y55fdTwe5i7x6MBh8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors leading-relaxed"
-                  >
-                    Perumal kovil vattam Kottamettu patti, p.o, Salem, Tamil Nadu 636455
-                  </a>
-                </div>
-              </motion.div>
-
-              {/* Phone */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="space-y-4"
-              >
+              <BlurFade delay={0.2} inView>
                 <div className="flex items-start gap-4">
                   <div className="mt-1 p-2 rounded-full bg-primary/10">
-                    <PhoneCall className="h-5 w-5 text-primary" />
+                    <Building2 className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Phone</h3>
-                    <div className="flex flex-col gap-2">
-                      <a
-                        href="tel:+919443234992"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        (+91) 94432 34992
-                      </a>
-                      <a
-                        href="tel:+919449333991"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        (+91) 94493 33991
-                      </a>
-                      <a
-                        href="tel:+919944634299"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        (+91) 99446 34299
-                      </a>
+                    <h3 className="font-semibold mb-1">Address</h3>
+                    <a
+                      href="https://maps.app.goo.gl/Y55fdTwe5i7x6MBh8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors leading-relaxed"
+                    >
+                      95/3, First Floor, South Street, Settu Complex, Opp Neuro Foundation Hospital, Three Roads, Salem - 636009
+                    </a>
+                  </div>
+                </div>
+              </BlurFade>
+
+              {/* Phone */}
+              <BlurFade delay={0.3} inView>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 rounded-full bg-primary/10">
+                      <PhoneCall className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">Phone Office</h3>
+                      <div className="flex flex-col gap-2">
+                        <a
+                          href="tel:+919360710100"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          (+91) 93607 10100
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </BlurFade>
 
               {/* Email */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="flex items-start gap-4"
-              >
-                <div className="mt-1 p-2 rounded-full bg-primary/10">
-                  <MailOpen className="h-5 w-5 text-primary" />
+              <BlurFade delay={0.4} inView>
+                <div className="flex items-start gap-4">
+                  <div className="mt-1 p-2 rounded-full bg-primary/10">
+                    <MailOpen className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Email</h3>
+                    <a
+                      href="mailto:info@smelectrical.com"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      info@smelectrical.com
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-1">Email</h3>
-                  <a
-                    href="mailto:info@srijayasakthi.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    info@srijayasakthi.com
-                  </a>
-                </div>
-              </motion.div>
+              </BlurFade>
 
               {/* Social Media */}
               <motion.div
@@ -238,7 +226,7 @@ export default function ContactPageSection() {
                       <Twitter className="h-5 w-5" />
                     </a>
                     <a
-                      href="https://wa.me/919443234992?text=Hi%20SM%20Electrical%2C%20I%20want%20to%20know%20more%20about%20your%20services."
+                      href="https://wa.me/919443234992?text=Hi%20SM%20ELECTRICAL%2C%20I%20want%20to%20know%20more%20about%20your%20services."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary hover:scale-110 transition-all duration-200"
@@ -288,7 +276,7 @@ export default function ContactPageSection() {
                   value={formData.name}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('name', e.target.value)}
                   required
-                  className="h-11"
+                  className="h-11 bg-background text-foreground"
                 />
               </div>
 
@@ -302,11 +290,28 @@ export default function ContactPageSection() {
                   value={formData.email}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('email', e.target.value)}
                   required
-                  className="h-11"
+                  className="h-11 bg-background text-foreground"
                 />
               </div>
 
-
+              {/* File Upload */}
+              <div className="space-y-2">
+                <Label htmlFor="file">Attachment (Optional)</Label>
+                <div className="relative">
+                  <Input
+                    id="file"
+                    type="file"
+                    onChange={handleFileChange}
+                    className="h-11 bg-background text-foreground file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 cursor-pointer pt-2"
+                  />
+                  <Paperclip className="absolute right-3 top-3 h-4 w-4 text-muted-foreground pointer-events-none" />
+                </div>
+                {formData.file && (
+                  <p className="text-xs text-primary font-medium px-1">
+                    Selected: {formData.file.name}
+                  </p>
+                )}
+              </div>
 
               {/* Message */}
               <div className="space-y-2">
@@ -317,7 +322,7 @@ export default function ContactPageSection() {
                   value={formData.message}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleInputChange('message', e.target.value)}
                   required
-                  className="min-h-[120px] resize-y"
+                  className="min-h-[120px] resize-y bg-background text-foreground"
                 />
               </div>
 
