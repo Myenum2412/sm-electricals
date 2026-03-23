@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { HeroHeader } from "@/components/header";
@@ -39,6 +40,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased font-sans`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-90K7D4WWXD"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-90K7D4WWXD');
+          `}
+        </Script>
         <meta name="theme-color" content="#002b5c" />
         <script
           type="application/ld+json"
