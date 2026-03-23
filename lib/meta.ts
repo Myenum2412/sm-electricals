@@ -70,7 +70,13 @@ export const defaultMetadata: Metadata = {
     },
     verification: {
         google: "google-site-verification-code"
-    }
+    },
+    manifest: "/manifest.json",
+    appleWebApp: {
+        capable: true,
+        statusBarStyle: "default",
+        title: "SM ELECTRICAL",
+    },
 }
 
 export const aboutUsMetadata: Metadata = {

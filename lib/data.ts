@@ -744,7 +744,7 @@ export const businessLocation = {
         postalCode: "636001",
         country: "India"
     },
-    phone: "+91 98765 43210",
+    phone: "+91 93607 10100",
     email: "info@sm-electrical.in",
     website: "https://www.smelectricals.tech",
     hours: {

@@ -40,7 +40,7 @@ const footerLinks: FooterSection[] = [
 ]
 
 const contactInfo = [
-    { icon: Phone, text: "+91 98400 00000", href: "tel:+919840000000" },
+    { icon: Phone, text: "+91 93607 10100", href: "tel:+919360710100" },
     { icon: Mail, text: "info@sm-electrical.in", href: "mailto:info@sm-electrical.in" },
     { icon: MapPin, text: "Plot No. 12, Industrial Area, Chennai - 600001", href: "#" },
 ]
