@@ -744,6 +744,13 @@ export const businessLocation = {
         postalCode: "636001",
         country: "India"
     },
+    factoryAddress: {
+        street: "336/3-A Mariyamman Kovil Street, Jagirredpatty, Mamangam",
+        city: "Salem",
+        state: "Tamil Nadu",
+        postalCode: "636302",
+        country: "India"
+    },
     phone: "+91 93607 10100",
     email: "info@sm-electrical.in",
     website: "https://www.smelectricals.tech",

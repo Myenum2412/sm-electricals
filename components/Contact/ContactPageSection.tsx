@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 import { motion } from 'motion/react';
-import { Building2, PhoneCall, MailOpen, Send, Loader2, CheckCircle2, Facebook, Instagram, Linkedin, Twitter, Paperclip } from 'lucide-react';
+import { Building2, PhoneCall, MailOpen, Send, Loader2, CheckCircle2, Facebook, Instagram, Linkedin, Paperclip } from 'lucide-react';
 import { BlurFade } from '@/components/ui/blur-fade';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -157,9 +157,32 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
         )}
 
         {type === 'factories' && (
-          <div className="mb-16 text-center py-12 bg-muted rounded-lg border-2 border-dashed">
-            <h3 className="text-xl font-semibold mb-2">Factory Location map Coming Soon</h3>
-            <p className="text-muted-foreground">Our new manufacturing facility details will be updated here shortly.</p>
+          <div className="mb-16">
+            <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg border border-border">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d125035.22544377705!2d78.1040567!3d11.66953245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s336%2F3-A%20Mariyamman%20Kovil%20Street%2C%20Jagirredpatty%2C%20Mamangam%2C%20Salem%20636302!5e0!3m2!1sen!2sin!4v1774287341971!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+                title="SM ELECTRICAL Factory Location - Salem, Tamil Nadu"
+              />
+              <div className="absolute top-4 right-4 z-10">
+                <Button asChild variant="secondary" className="shadow-lg bg-white/90 hover:bg-white text-primary flex items-center gap-2">
+                  <a 
+                    href="https://www.google.com/maps/search/336/3-A+Mariyamman+Kovil+Street,+Jagirredpatty,+Mamangam,+Salem+636302" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Building2 className="w-4 h-4" />
+                    View on Google Maps
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         )}
 
@@ -214,7 +237,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                     <div>
                       <h3 className="font-semibold mb-1">Factories Address</h3>
                       <div className="text-muted-foreground leading-relaxed">
-                        Details Coming Soon
+                        336/3-A Mariyamman Kovil Street, Jagirredpatty, Mamangam, Salem 636302
                       </div>
                     </div>
                   </div>
@@ -324,15 +347,6 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                       aria-label="LinkedIn"
                     >
                       <Linkedin className="h-5 w-5" />
-                    </a>
-                    <a
-                      href="https://www.twitter.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary hover:scale-110 transition-all duration-200"
-                      aria-label="Twitter"
-                    >
-                      <Twitter className="h-5 w-5" />
                     </a>
                     <a
                       href="https://wa.me/919087606352?text=Hi%20SM%20ELECTRICAL%2C%20I%20want%20to%20know%20more%20about%20your%20services."
