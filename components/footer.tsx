@@ -46,7 +46,7 @@ const contactInfo = [
 ]
 
 const socialLinks = [
-    { icon: MessageCircle, href: "https://wa.me/919360710100", label: "WhatsApp" },
+    { icon: MessageCircle, href: "https://wa.me/919087606352", label: "WhatsApp" },
     { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61578551044590", label: "Facebook" },
     { icon: Linkedin, href: "https://www.linkedin.com", label: "LinkedIn" },
     { icon: Instagram, href: "https://www.instagram.com/smelectrical._/", label: "Instagram" },

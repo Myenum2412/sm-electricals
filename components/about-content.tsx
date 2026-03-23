@@ -156,7 +156,7 @@ export default function AboutPageContent() {
                                 <h3 className="text-2xl font-bold text-foreground px-2">Quick Links</h3>
                                 <div className="grid gap-4">
                                     <BlurFade delay={0.6} inView>
-                                        <Link href="/panels" className="group flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 text-white px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                                        <Link href="/projects" className="group flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 text-white px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
                                             <div className="flex items-center gap-3">
                                                 <div className="p-1.5 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors">
                                                     <Building2 className="h-4 w-4" />

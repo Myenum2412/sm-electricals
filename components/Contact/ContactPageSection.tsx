@@ -142,9 +142,9 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
               {/* Map Overlay Pin */}
               <div className="absolute top-4 right-4 z-10">
                 <Button asChild variant="secondary" className="shadow-lg bg-white/90 hover:bg-white text-primary flex items-center gap-2">
-                  <a 
-                    href="https://maps.app.goo.gl/4XmX2c5DH4wHUT9i8" 
-                    target="_blank" 
+                  <a
+                    href="https://maps.app.goo.gl/4XmX2c5DH4wHUT9i8"
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Building2 className="w-4 h-4" />
@@ -221,7 +221,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                 </BlurFade>
               )}
 
-              {/* Phone */}
+              {/* Office Number */}
               <BlurFade delay={0.3} inView>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
@@ -236,6 +236,28 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
                           (+91) 93607 10100
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </BlurFade>
+
+              {/* Factory Number */}
+              <BlurFade delay={0.3} inView>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 rounded-full bg-primary/10">
+                      <PhoneCall className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">Contact Number</h3>
+                      <div className="flex flex-col gap-2">
+                        <a
+                          href="tel:+919894700465"
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          (+91) 98947 00465
                         </a>
                       </div>
                     </div>
@@ -313,7 +335,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                       <Twitter className="h-5 w-5" />
                     </a>
                     <a
-                      href="https://wa.me/919360710100"
+                      href="https://wa.me/919087606352?text=Hi%20SM%20ELECTRICAL%2C%20I%20want%20to%20know%20more%20about%20your%20services."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary hover:scale-110 transition-all duration-200"
@@ -436,7 +458,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
               {/* File Upload */}
               <div className="space-y-4">
                 <Label htmlFor="file">Attachments (Optional)</Label>
-                <AnimatedFileUpload 
+                <AnimatedFileUpload
                   onFilesSelected={handleFilesSelected}
                   accept=".pdf,.doc,.docx,.jpg,.png"
                   maxSize={10 * 1024 * 1024} // 10MB

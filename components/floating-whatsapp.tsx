@@ -19,7 +19,7 @@ export const FloatingWhatsApp = () => {
             className="fixed bottom-6 right-6 z-50"
         >
             <a
-                href="https://wa.me/919360710100"
+                href="https://wa.me/919087606352"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
