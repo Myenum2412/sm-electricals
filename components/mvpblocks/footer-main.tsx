@@ -17,23 +17,22 @@ import {
 
 const data = () => ({
   navigation: {
-    product: [
-      { name: 'Panels', href: '/panels' },
-      { name: 'Power Distribution', href: '/panels' },
-      { name: 'Industrial Control', href: '/panels' },
-      { name: 'Custom Solutions', href: '/panels' },
-    ],
     company: [
       { name: 'About', href: '/about' },
       { name: 'Services', href: '/services' },
       { name: 'Projects', href: '/projects' },
       { name: 'Contact', href: '/contact' },
     ],
+    industries: [
+      { name: 'Textile Mills', href: '/projects' },
+      { name: 'Steel Industries', href: '/projects' },
+      { name: 'Food Processing', href: '/projects' },
+      { name: 'Automotive', href: '/projects' },
+      { name: 'Healthcare', href: '/projects' },
+    ],
     resources: [
-      { name: 'Documentation', href: '#' },
-      { name: 'Catalogue', href: '#' },
-      { name: 'Community', href: '#' },
-      { name: 'Status', href: '#' },
+      { name: 'FAQ', href: '/faq' },
+      { name: 'Blog', href: '/blog' },
     ],
     legal: [
       { name: 'Privacy', href: '#' },
@@ -116,8 +115,8 @@ export default function FooterMain() {
           </div>
 
           {/* Navigation Links */}
-          <div className="grid w-full grid-cols-2 items-start justify-center gap-8 px-5 lg:col-span-3 text-center">
-            {(['product', 'company', 'resources', 'legal'] as const).map(
+          <div className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-start justify-center gap-8 px-5 lg:col-span-3 text-center">
+            {(['company', 'industries', 'resources'] as const).map(
               (section) => (
                 <div key={section} className="w-full flex flex-col items-center">
                   <h3 className="border-primary mb-4 border-l-2 pl-5 text-sm font-semibold tracking-wider uppercase">
@@ -140,6 +139,7 @@ export default function FooterMain() {
               ),
             )}
           </div>
+
         </div>
 
         {/* Bottom Section */}

@@ -7,11 +7,11 @@ export const metadata = aboutUsMetadata
 export default function AboutPage() {
     const organizationSchema = generateOrganizationSchema(
         "SM ELECTRICAL",
-        "https://sm-electrical.in"
+        "https://www.smelectricals.tech"
     );
 
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", url: "https://sm-electrical.in" },
+        { name: "Home", url: "https://www.smelectricals.tech" },
         { name: "About Us", url: "https://sm-electrical.in/about" },
     ])
 

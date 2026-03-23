@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 
 import { useState } from "react";
+import * as LucideIcons from "lucide-react";
 
 export const HoverEffect = ({
   items,
@@ -13,6 +14,7 @@ export const HoverEffect = ({
     title: string;
     description: string;
     link: string;
+    icon?: string;
   }[];
   className?: string;
 }) => {
@@ -25,39 +27,46 @@ export const HoverEffect = ({
         className
       )}
     >
-      {items.map((item, idx) => (
-        <a
-          href={item?.link}
-          key={item?.link}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
-                layoutId="hoverBackground"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 0.15 },
-                }}
-                exit={{
-                  opacity: 0,
-                  transition: { duration: 0.15, delay: 0.2 },
-                }}
-              />
-            )}
-          </AnimatePresence>
-          <Card className="h-full flex flex-col justify-between">
-            <div>
-                <CardTitle>{item.title}</CardTitle>
-                <CardDescription>{item.description}</CardDescription>
-            </div>
-          </Card>
-        </a>
-      ))}
+      {items.map((item, idx) => {
+        const IconComponent = item.icon ? (LucideIcons as any)[item.icon] : null;
+        
+        return (
+          <a
+            href={item?.link}
+            key={item?.link}
+            className="relative group  block p-2 h-full w-full"
+            onMouseEnter={() => setHoveredIndex(idx)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <AnimatePresence>
+              {hoveredIndex === idx && (
+                <motion.span
+                  className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { duration: 0.15 },
+                  }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+            <Card className="h-full flex flex-col justify-between">
+              <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    {IconComponent && <IconComponent className="w-6 h-6 text-primary" />}
+                    <CardTitle className="mt-0">{item.title}</CardTitle>
+                  </div>
+                  <CardDescription>{item.description}</CardDescription>
+              </div>
+            </Card>
+          </a>
+        );
+      })}
     </div>
   );
 };

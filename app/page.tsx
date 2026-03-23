@@ -59,7 +59,7 @@ export default function Home() {
               <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                 <video
                   className="bg-background aspect-15/8 relative rounded-2xl w-full h-full object-cover"
-                  src="/into.mp4"
+                  src="https://cmzpugwctf.ufs.sh/f/EYW1cUY9x3eJuVq0Qyp4kcY5pJ39TZqRiHaCr1vLhFexBdPm"
                   controls
                   loop
                   muted

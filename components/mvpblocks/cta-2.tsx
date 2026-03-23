@@ -2,14 +2,14 @@ import { Phone, CheckCircle2 } from "lucide-react";
 
 export default function CTA2() {
   return (
-    <div className="relative mx-auto mb-12 w-full max-w-7xl overflow-hidden rounded-[40px] bg-orange-500 py-10 px-8 sm:px-12 md:py-14 md:px-24">
+    <div className="relative mx-auto mb-12 w-full max-w-7xl overflow-hidden rounded-[40px] bg-blue-600 py-10 px-8 sm:px-12 md:py-14 md:px-24">
       <div className="absolute inset-0 hidden h-full w-full overflow-hidden md:block">
         <div className="absolute top-1/2 right-[-35%] aspect-square h-[800px] w-[800px] -translate-y-1/2">
-          <div className="absolute inset-0 rounded-full bg-orange-400 opacity-30"></div>
-          <div className="absolute inset-0 scale-[0.8] rounded-full bg-orange-300 opacity-30"></div>
-          <div className="absolute inset-0 scale-[0.6] rounded-full bg-orange-200 opacity-30"></div>
-          <div className="absolute inset-0 scale-[0.4] rounded-full bg-orange-100 opacity-30"></div>
-          <div className="absolute inset-0 scale-[0.2] rounded-full bg-orange-50 opacity-30"></div>
+          <div className="absolute inset-0 rounded-full bg-blue-500 opacity-30"></div>
+          <div className="absolute inset-0 scale-[0.8] rounded-full bg-blue-400 opacity-30"></div>
+          <div className="absolute inset-0 scale-[0.6] rounded-full bg-blue-300 opacity-30"></div>
+          <div className="absolute inset-0 scale-[0.4] rounded-full bg-blue-200 opacity-30"></div>
+          <div className="absolute inset-0 scale-[0.2] rounded-full bg-blue-100 opacity-30"></div>
           <div className="absolute inset-0 scale-[0.1] rounded-full bg-white/50 opacity-30"></div>
         </div>
       </div>

@@ -11,7 +11,14 @@ const menuItems = [
     { name: 'Services', href: '/services' },
     { name: 'Projects', href: '/projects' },
     { name: 'About', href: '/about' },
-    { name: 'Catalogue', href: '/Catalogue.pdf', target: '_blank' },
+    { 
+        name: 'Contact', 
+        href: '/contact',
+        subItems: [
+            { name: 'Office', href: '/contact/office' },
+            { name: 'Factories', href: '/contact/factories' },
+        ]
+    },
 ]
 
 export const HeroHeader = () => {
@@ -123,9 +130,9 @@ export const HeroHeader = () => {
                                 <Button
                                     asChild
                                     className="h-10 px-6 rounded-xl gap-2 font-medium">
-                                    <Link href="/contact">
+                                    <Link href="/contact/office">
                                         <Phone className="size-4" />
-                                        <span>Contact</span>
+                                        <span>Contact Office</span>
                                     </Link>
                                 </Button>
                             </div>

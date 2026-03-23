@@ -10,18 +10,34 @@ import { HoverEffect } from "@/components/ui/card-hover-effect"
 
 export const metadata = servicesMetadata
 
-import { services } from "@/lib/data"
+import { services, projects } from "@/lib/data"
+import { ProductsCarousel } from "@/components/products/ProductsCarousel"
+
 
 function page() {
     const organizationSchema = generateOrganizationSchema(
         "SM ELECTRICAL",
-        "https://sm-electrical.in"
+        "https://www.smelectricals.tech"
     )
 
     const breadcrumbSchema = generateBreadcrumbSchema([
-        { name: "Home", url: "https://sm-electrical.in" },
-        { name: "Services", url: "https://sm-electrical.in/services" },
+        { name: "Home", url: "https://www.smelectricals.tech" },
+        { name: "Services", url: "https://www.smelectricals.tech/services" },
     ])
+
+    const projectProducts = projects.map((project, index) => ({
+        id: index + 1,
+        name: project.title,
+        price: "",
+        originalPrice: "",
+        image: project.image,
+        description: "",
+        rating: 5,
+        reviewCount: 0,
+        size: "",
+        benefits: []
+    }));
+
 
     return (
         <>
@@ -85,6 +101,15 @@ function page() {
                         <h1 className="text-4xl font-bold text-foreground mb-4">Our Comprehensive Electrical Solutions</h1>
                         <HoverEffect items={services} />
                     </div>
+
+                    <ProductsCarousel
+                        title="Explore Our Recent Projects"
+                        description="A showcase of our high-quality electrical installations and custom panel solutions across various industries."
+                        products={projectProducts}
+                        showImageOnly={true}
+                        redirectPath="/projects"
+                    />
+
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
                         <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-xl">

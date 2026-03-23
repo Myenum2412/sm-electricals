@@ -6,6 +6,8 @@ import Footer from "@/components/mvpblocks/footer-main";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { Toaster } from "@/components/ui/sonner";
+import { defaultMetadata } from "@/lib/meta";
+import { generateDetailedOrganizationSchema, generateLocalBusinessSchema } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,21 +24,29 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "SM ELECTRICAL",
-  description: "High-quality Electrical Solutions",
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = generateDetailedOrganizationSchema()
+  const localBusinessSchema = generateLocalBusinessSchema()
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased font-sans`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

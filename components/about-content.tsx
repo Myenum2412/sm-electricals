@@ -8,6 +8,7 @@ import { motion, useScroll, useTransform } from "motion/react"
 import Image from "next/image"
 import StatsSection from "@/components/stats"
 import { BlurFade } from "@/components/ui/blur-fade"
+import { LinkPreview } from "@/components/ui/link-preview";
 
 export default function AboutPageContent() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -79,7 +80,7 @@ export default function AboutPageContent() {
                                     <h1 className="text-4xl font-bold lg:text-5xl mb-6 text-foreground">About SM ELECTRICAL</h1>
                                     <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                                         <p>
-                                            Founded in 2013 by **Karthi V** (Founder) and led by **Gowtham** (Managing Director), SM ELECTRICAL is a trusted manufacturer and supplier of high-quality electrical panels and power distribution solutions designed for modern industrial, commercial, and infrastructure needs.
+                                            Established in 2013 by Karthi V and headed by Gowtham, SM ELECTRICAL specializes in delivering high-quality electrical panels and efficient power distribution solutions for diverse sectors.
                                         </p>
                                         <p>
                                             With over a decade of experience in the electrical industry, SM ELECTRICAL has built a reputation for delivering safe, reliable, and efficient electrical systems. Our expertise lies in designing and manufacturing electrical panels that meet the operational demands of contractors, builders, industrial facilities, and electrical professionals.
@@ -105,7 +106,7 @@ export default function AboutPageContent() {
                                             Starting with a focus on electrical panel manufacturing, the company steadily expanded its capabilities by combining technical expertise, industry experience, and customer-focused service. Over time, SM ELECTRICAL has grown into a trusted partner for contractors, builders, and industries seeking reliable electrical solutions.
                                         </p>
                                         <p>
-                                            We are a proud member of the **BNI Capital Chapter**, which reflects our commitment to professional excellence, integrity, and building strong business relationships within our community.
+                                            We are a proud member of the <LinkPreview url="https://bni-salem.in/salem-capital/en-IN/index" className="font-bold text-red-600">BNI Capital Chapter</LinkPreview>, which reflects our commitment to professional excellence, integrity, and building strong business relationships within our community.
                                         </p>
                                         <p>
                                             Our growth has been driven by a dedication to quality craftsmanship, continuous improvement, and strong client relationships. Every project we undertake reflects our commitment to delivering electrical systems that are efficient, safe, and built to last.
@@ -140,7 +141,7 @@ export default function AboutPageContent() {
                             <BlurFade inView={true} delay={0.5} direction="left">
                                 <div className="relative w-full h-[500px] md:h-[700px] overflow-hidden rounded-3xl shadow-2xl group border border-border/50">
                                     {/* Image 1 */}
-                                    <motion.div 
+                                    <motion.div
                                         style={{ opacity: opacity1 }}
                                         className="absolute inset-0 z-10"
                                     >
@@ -155,7 +156,7 @@ export default function AboutPageContent() {
                                     </motion.div>
 
                                     {/* Image 2 */}
-                                    <motion.div 
+                                    <motion.div
                                         style={{ opacity: opacity2 }}
                                         className="absolute inset-0 z-20"
                                     >
@@ -168,7 +169,7 @@ export default function AboutPageContent() {
                                             className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
                                         />
                                     </motion.div>
-                                    
+
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-30" />
                                 </div>
                             </BlurFade>
@@ -228,7 +229,7 @@ export default function AboutPageContent() {
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <video
                                         className="bg-background aspect-15/8 relative rounded-2xl w-full h-full object-cover"
-                                        src="/into.mp4"
+                                        src="https://cmzpugwctf.ufs.sh/f/EYW1cUY9x3eJuVq0Qyp4kcY5pJ39TZqRiHaCr1vLhFexBdPm"
                                         controls
                                         loop
                                         muted

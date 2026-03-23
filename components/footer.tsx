@@ -7,23 +7,26 @@ import { Logo } from '@/components/logo'
 import { AnimatedThemeToggler } from './ui/animated-theme-toggler'
 import MaxWidthWrapper from './MaxWidthWrapper'
 
-const footerLinks = [
+interface FooterLink {
+    label: string;
+    href: string;
+    target?: string;
+}
+
+interface FooterSection {
+    title: string;
+    links: FooterLink[];
+}
+
+const footerLinks: FooterSection[] = [
     {
         title: "Company",
         links: [
             { label: "Home", href: "/" },
             { label: "About Us", href: "/about" },
+            { label: "Catalogue", href: "/Catalogue.pdf", target: "_blank" },
             { label: "Services", href: "/services" },
             { label: "Contact", href: "/contact" },
-        ]
-    },
-    {
-        title: "Products",
-        links: [
-            { label: "Panels", href: "/panels" },
-            { label: "Power Distribution", href: "/panels" },
-            { label: "Industrial Control", href: "/panels" },
-            { label: "Custom Solutions", href: "/panels" },
         ]
     },
     {
@@ -86,6 +89,8 @@ export default function Footer() {
                                         <li key={link.label}>
                                             <Link
                                                 href={link.href}
+                                                target={link.target}
+                                                rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
                                                 className="text-muted-foreground hover:text-primary transition-colors text-sm"
                                             >
                                                 {link.label}

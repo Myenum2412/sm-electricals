@@ -9,6 +9,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import AnimatedFileUpload from '@/components/ui/smoothui/animated-file-upload';
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -20,13 +22,32 @@ import {
 
 
 
-export default function ContactPageSection() {
+
+const INDIAN_STATES = [
+  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+  "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
+  "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
+  "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
+  "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
+  "Uttar Pradesh", "Uttarakhand", "West Bengal",
+  "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu",
+  "Delhi", "Jammu and Kashmir", "Ladakh", "Lakshadweep", "Puducherry"
+];
+
+export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'office' | 'factories' }) {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    country: 'India',
+    state: '',
+    place: '',
     message: '',
-    file: null as File | null,
+    files: [] as File[],
   });
+
+
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -38,8 +59,11 @@ export default function ContactPageSection() {
       // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1500));
       toast.success('Your message has been sent successfully!');
-      setFormData({ name: '', email: '', message: '', file: null });
+      setFormData({ name: '', email: '', country: 'India', state: '', place: '', message: '', files: [] });
       setIsSubmitted(true);
+
+
+
       setTimeout(() => {
         setIsSubmitted(false);
       }, 5000);
@@ -54,9 +78,8 @@ export default function ContactPageSection() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setFormData(prev => ({ ...prev, file }));
+  const handleFilesSelected = (files: File[]) => {
+    setFormData(prev => ({ ...prev, files }));
   };
 
 
@@ -73,27 +96,58 @@ export default function ContactPageSection() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Contact</BreadcrumbPage>
+              <BreadcrumbLink href={type === 'all' ? "/contact" : "/contact"}>{type === 'all' ? "Contact" : "Contact"}</BreadcrumbLink>
             </BreadcrumbItem>
+            {type !== 'all' && (
+              <>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{type === 'office' ? "Office" : "Factories"}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </>
+            )}
           </BreadcrumbList>
         </Breadcrumb>
 
         <br />
         {/* Google Maps Section */}
-        <div className="mb-16">
-          <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg border border-border">
-            <iframe
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full"
-              title="SM ELECTRICAL Location"
-            />
+        {type !== 'factories' && (
+          <div className="mb-16">
+            <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg border border-border">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3407.4290799190994!2d78.1295800748189!3d11.663973088543955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf10014dbf19f%3A0x520837699ba7429a!2sSM%20Electricals%20Office!5e0!3m2!1sen!2sin!4v1774069581611!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+                title="SM ELECTRICAL Location - Salem, Tamil Nadu"
+              />
+              {/* Map Overlay Pin */}
+              <div className="absolute top-4 right-4 z-10">
+                <Button asChild variant="secondary" className="shadow-lg bg-white/90 hover:bg-white text-primary flex items-center gap-2">
+                  <a 
+                    href="https://maps.app.goo.gl/4XmX2c5DH4wHUT9i8" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Building2 className="w-4 h-4" />
+                    View on Google Maps
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
+        )}
+
+        {type === 'factories' && (
+          <div className="mb-16 text-center py-12 bg-muted rounded-lg border-2 border-dashed">
+            <h3 className="text-xl font-semibold mb-2">Factory Location map Coming Soon</h3>
+            <p className="text-muted-foreground">Our new manufacturing facility details will be updated here shortly.</p>
+          </div>
+        )}
 
         {/* Contact Information and Form Section */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
@@ -114,25 +168,44 @@ export default function ContactPageSection() {
             </div>
 
             <div className="space-y-6">
-              {/* Address */}
-              <BlurFade delay={0.2} inView>
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 p-2 rounded-full bg-primary/10">
-                    <Building2 className="h-5 w-5 text-primary" />
+              {/* Office Address */}
+              {(type === 'all' || type === 'office') && (
+                <BlurFade delay={0.2} inView>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 rounded-full bg-primary/10">
+                      <Building2 className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">Office Address</h3>
+                      <a
+                        href="https://maps.app.goo.gl/Y55fdTwe5i7x6MBh8"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors leading-relaxed"
+                      >
+                        95/3, 1st Floor, Settu Complex, Opposite Neuro Fundation, South STREET, 3 Road, Palapatti, Salem-636009, Tamil Nadu
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Address</h3>
-                    <a
-                      href="https://maps.app.goo.gl/Y55fdTwe5i7x6MBh8"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors leading-relaxed"
-                    >
-                      95/3, First Floor, South Street, Settu Complex, Opp Neuro Foundation Hospital, Three Roads, Salem - 636009
-                    </a>
+                </BlurFade>
+              )}
+
+              {/* Factories Address */}
+              {(type === 'all' || type === 'factories') && (
+                <BlurFade delay={0.2} inView>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 p-2 rounded-full bg-primary/10">
+                      <Building2 className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">Factories Address</h3>
+                      <div className="text-muted-foreground leading-relaxed">
+                        Details Coming Soon
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </BlurFade>
+                </BlurFade>
+              )}
 
               {/* Phone */}
               <BlurFade delay={0.3} inView>
@@ -142,7 +215,7 @@ export default function ContactPageSection() {
                       <PhoneCall className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Phone Office</h3>
+                      <h3 className="font-semibold mb-1">Office Number</h3>
                       <div className="flex flex-col gap-2">
                         <a
                           href="tel:+919360710100"
@@ -266,54 +339,98 @@ export default function ContactPageSection() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Full Name */}
-              <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
-                <Input
-                  id="name"
-                  type="text"
-                  placeholder="Enter Name"
-                  value={formData.name}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('name', e.target.value)}
-                  required
-                  className="h-11 bg-background text-foreground"
-                />
+              {/* Name and Email Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Full Name */}
+                <div className="space-y-2">
+                  <Label htmlFor="name">Full Name</Label>
+                  <Input
+                    id="name"
+                    type="text"
+                    placeholder="Enter Name"
+                    value={formData.name}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('name', e.target.value)}
+                    required
+                    className="h-11 bg-background text-foreground"
+                  />
+                </div>
+
+                {/* Email */}
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="Enter Email"
+                    value={formData.email}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('email', e.target.value)}
+                    required
+                    className="h-11 bg-background text-foreground"
+                  />
+                </div>
               </div>
 
-              {/* Email */}
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Enter Email"
-                  value={formData.email}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('email', e.target.value)}
-                  required
-                  className="h-11 bg-background text-foreground"
-                />
+              {/* Country, State and Place Row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Country */}
+                <div className="space-y-2">
+                  <Label htmlFor="country">Country</Label>
+                  <Input
+                    id="country"
+                    type="text"
+                    value={formData.country}
+                    disabled
+                    className="h-11 bg-muted text-muted-foreground cursor-not-allowed"
+                  />
+                </div>
+
+                {/* State */}
+                <div className="space-y-2">
+                  <Label htmlFor="state">State</Label>
+                  <div className="relative">
+                    <select
+                      id="state"
+                      value={formData.state}
+                      onChange={(e) => handleInputChange('state', e.target.value)}
+                      required
+                      className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none bg-no-repeat bg-[right_0.75rem_center] bg-[length:1rem_1rem]"
+                      style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")` }}
+                    >
+                      <option value="" disabled>Select State</option>
+                      {INDIAN_STATES.map(state => (
+                        <option key={state} value={state}>{state}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Place */}
+                <div className="space-y-2">
+                  <Label htmlFor="place">Place</Label>
+                  <Input
+                    id="place"
+                    type="text"
+                    placeholder="Enter Place"
+                    value={formData.place}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('place', e.target.value)}
+                    required
+                    className="h-11 bg-background text-foreground"
+                  />
+                </div>
               </div>
 
               {/* File Upload */}
-              <div className="space-y-2">
-                <Label htmlFor="file">Attachment (Optional)</Label>
-                <div className="relative">
-                  <Input
-                    id="file"
-                    type="file"
-                    onChange={handleFileChange}
-                    className="h-11 bg-background text-foreground file:mr-4 file:py-1 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 cursor-pointer pt-2"
-                  />
-                  <Paperclip className="absolute right-3 top-3 h-4 w-4 text-muted-foreground pointer-events-none" />
-                </div>
-                {formData.file && (
-                  <p className="text-xs text-primary font-medium px-1">
-                    Selected: {formData.file.name}
-                  </p>
-                )}
+              <div className="space-y-4">
+                <Label htmlFor="file">Attachments (Optional)</Label>
+                <AnimatedFileUpload 
+                  onFilesSelected={handleFilesSelected}
+                  accept=".pdf,.doc,.docx,.jpg,.png"
+                  maxSize={10 * 1024 * 1024} // 10MB
+                />
               </div>
 
               {/* Message */}
+
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
                 <Textarea
@@ -322,9 +439,10 @@ export default function ContactPageSection() {
                   value={formData.message}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleInputChange('message', e.target.value)}
                   required
-                  className="min-h-[120px] resize-y bg-background text-foreground"
+                  className="min-h-[120px] resize-y bg-white text-black focus-visible:ring-primary/50"
                 />
               </div>
+
 
               {/* Submit Button */}
               <Button
