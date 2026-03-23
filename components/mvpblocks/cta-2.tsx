@@ -1,4 +1,5 @@
 import { Phone, CheckCircle2 } from "lucide-react";
+import { SampleTestForm } from "../SampleTestForm";
 
 export default function CTA2() {
   return (
@@ -16,11 +17,11 @@ export default function CTA2() {
 
       <div className="relative z-10 text-center md:text-left">
         <h1 className="mb-3 text-3xl font-bold text-white sm:text-4xl md:mb-4 md:text-5xl">
-          Let&apos;s Get In Touch.
+          Powering Your Progress.
         </h1>
-        <p className="mx-auto mb-6 max-w-md text-base text-white sm:text-lg md:mx-0 md:mb-8">
-          Your laboratory instruments should serve you, not the other way
-          around. We&apos;re happy to help you.
+        <p className="mx-auto mb-6 max-w-md text-base text-white/90 sm:text-lg md:mx-0 md:mb-8">
+          From custom engineering to large-scale infrastructure, we provide 
+          reliable electrical solutions built for the future.
         </p>
 
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start sm:gap-6">
@@ -31,13 +32,19 @@ export default function CTA2() {
             </span>
             <span className="h-5 w-5 flex-shrink-0 rounded-full bg-white"></span>
           </button>
-          <button className="flex w-full items-center justify-between rounded-full border border-black/10 bg-black/20 px-5 py-3 text-white backdrop-blur-md transition-transform hover:scale-105 sm:w-[240px]">
-            <span className="font-medium flex items-center gap-2">
-              <CheckCircle2 className="size-4" />
-              Test Your Samples
-            </span>
-            <span className="h-5 w-5 flex-shrink-0 rounded-full bg-white"></span>
-          </button>
+          <SampleTestForm 
+            trigger={
+              <button className="flex w-full items-center justify-between rounded-full border-2 border-white/30 bg-white/10 px-5 py-3 text-white backdrop-blur-xl transition-all hover:bg-white hover:text-blue-600 hover:scale-105 sm:w-[240px] shadow-lg group">
+                <span className="font-semibold flex items-center gap-2">
+                  <CheckCircle2 className="size-4" />
+                  Fill the form
+                </span>
+                <span className="h-6 w-6 flex-shrink-0 rounded-full bg-white flex items-center justify-center transition-transform group-hover:rotate-12">
+                   <div className="h-2 w-2 rounded-full bg-blue-600" />
+                </span>
+              </button>
+            }
+          />
         </div>
       </div>
     </div>

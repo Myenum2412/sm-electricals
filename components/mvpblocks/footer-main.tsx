@@ -6,14 +6,26 @@ import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
 import { Input } from '@/components/ui/input';
 import {
-  Github,
   Linkedin,
-  Twitter,
+  Facebook,
+  Instagram,
   Moon,
   Sun,
   ArrowDownLeft,
-  MessageCircle,
 } from 'lucide-react';
+
+const WhatsAppIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 32 32"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M19.11 17.41c-.28-.14-1.65-.82-1.9-.91-.25-.09-.43-.14-.61.14-.18.28-.7.91-.86 1.1-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.46h-.52c-.18 0-.48.07-.73.35-.25.28-.95.93-.95 2.27 0 1.34.98 2.64 1.12 2.83.14.18 1.93 2.95 4.68 4.13.65.28 1.15.45 1.54.58.65.21 1.24.18 1.71.11.52-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32Z" />
+    <path d="M26.67 5.33A14.5 14.5 0 0 0 3.58 22.3L2 30l7.86-1.55A14.5 14.5 0 0 0 30.5 16c0-3.87-1.5-7.51-3.83-10.67Zm-10.67 23a12 12 0 0 1-6.1-1.67l-.44-.26-4.66.92.94-4.54-.29-.47A12 12 0 1 1 28 16c0 6.63-5.37 12-12 12Z" />
+  </svg>
+);
 
 const data = () => ({
   navigation: {
@@ -41,10 +53,10 @@ const data = () => ({
     ],
   },
   socialLinks: [
-    { icon: Twitter, label: 'Twitter', href: '#' },
-    { icon: Github, label: 'GitHub', href: '#' },
-    { icon: MessageCircle, label: 'WhatsApp', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#' },
+    { icon: WhatsAppIcon, label: 'WhatsApp', href: 'https://wa.me/919360710100' },
+    { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com' },
+    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com' },
   ],
   bottomLinks: [
     { href: '#', label: 'Privacy Policy' },

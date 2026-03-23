@@ -56,19 +56,33 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      toast.success('Your message has been sent successfully!');
-      setFormData({ name: '', email: '', country: 'India', state: '', place: '', message: '', files: [] });
-      setIsSubmitted(true);
+      // Send form data to Formspree
+      const response = await fetch("https://formspree.io/f/mqaeveve", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New Contact Form Submission from ${formData.name}`,
+        }),
+      });
 
+      if (response.ok) {
+        toast.success("Your message has been sent successfully!");
+        setFormData({ name: "", email: "", country: "India", state: "", place: "", message: "", files: [] });
+        setIsSubmitted(true);
 
-
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.error || "Failed to send message. Please try again.");
+      }
     } catch (error) {
-      toast.error('Failed to send message. Please try again.');
+      toast.error("An error occurred. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -351,7 +365,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                     value={formData.name}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('name', e.target.value)}
                     required
-                    className="h-11 bg-background text-foreground"
+                    className="h-11 bg-white text-black border-input"
                   />
                 </div>
 
@@ -365,7 +379,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                     value={formData.email}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('email', e.target.value)}
                     required
-                    className="h-11 bg-background text-foreground"
+                    className="h-11 bg-white text-black border-input"
                   />
                 </div>
               </div>
@@ -393,7 +407,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                       value={formData.state}
                       onChange={(e) => handleInputChange('state', e.target.value)}
                       required
-                      className="flex h-11 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none bg-no-repeat bg-[right_0.75rem_center] bg-[length:1rem_1rem]"
+                      className="flex h-11 w-full rounded-md border border-input bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 appearance-none bg-no-repeat bg-[right_0.75rem_center] bg-[length:1rem_1rem] text-black"
                       style={{ backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e")` }}
                     >
                       <option value="" disabled>Select State</option>
@@ -414,7 +428,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                     value={formData.place}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange('place', e.target.value)}
                     required
-                    className="h-11 bg-background text-foreground"
+                    className="h-11 bg-white text-black border-input"
                   />
                 </div>
               </div>
@@ -439,7 +453,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                   value={formData.message}
                   onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleInputChange('message', e.target.value)}
                   required
-                  className="min-h-[120px] resize-y bg-white text-black focus-visible:ring-primary/50"
+                  className="min-h-[120px] resize-y bg-white text-black border-input focus-visible:ring-primary/50"
                 />
               </div>
 

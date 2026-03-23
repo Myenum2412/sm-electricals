@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Instagram, Facebook, Mail, Phone, MapPin, Send, Youtube, Twitter } from 'lucide-react'
+import { Instagram, Facebook, Mail, Phone, MapPin, Linkedin, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Logo } from '@/components/logo'
@@ -46,10 +46,10 @@ const contactInfo = [
 ]
 
 const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Youtube, href: "#", label: "Youtube" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: MessageCircle, href: "https://wa.me/919360710100", label: "WhatsApp" },
+    { icon: Facebook, href: "https://www.facebook.com", label: "Facebook" },
+    { icon: Linkedin, href: "https://www.linkedin.com", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com", label: "Instagram" },
 ]
 
 export default function Footer() {

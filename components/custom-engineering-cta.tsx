@@ -1,4 +1,5 @@
 import { Phone, CheckCircle2 } from "lucide-react";
+import { SampleTestForm } from "./SampleTestForm";
 
 export default function CustomEngineeringCTA() {
   return (
@@ -30,13 +31,19 @@ export default function CustomEngineeringCTA() {
             </span>
             <span className="h-5 w-5 flex-shrink-0 rounded-full bg-primary"></span>
           </button>
-          <button className="flex w-full items-center justify-between rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-5 py-3 text-primary-foreground backdrop-blur-md transition-transform hover:scale-105 sm:w-[240px]">
-            <span className="font-medium flex items-center gap-2">
-              <CheckCircle2 className="size-4" />
-              Test Your Samples
-            </span>
-            <span className="h-5 w-5 flex-shrink-0 rounded-full bg-primary-foreground"></span>
-          </button>
+          <SampleTestForm 
+            trigger={
+              <button className="flex w-full items-center justify-between rounded-full border-2 border-white/20 bg-white/10 px-5 py-3 text-white backdrop-blur-xl transition-all hover:bg-white hover:text-primary hover:scale-105 sm:w-[240px] shadow-xl group">
+                <span className="font-bold flex items-center gap-2">
+                  <CheckCircle2 className="size-4" />
+                  Fill the form
+                </span>
+                <span className="h-6 w-6 flex-shrink-0 rounded-full bg-white flex items-center justify-center transition-transform group-hover:rotate-12 shadow-sm">
+                   <div className="h-2 w-2 rounded-full bg-primary" />
+                </span>
+              </button>
+            }
+          />
         </div>
       </div>
     </div>
