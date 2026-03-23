@@ -97,18 +97,20 @@ export const HeroHeader = () => {
                                                         <ChevronDown className={cn('size-4 transition-transform duration-200', openDropdown === item.name && 'rotate-180')} />
                                                     </Link>
                                                     {openDropdown === item.name && (
-                                                        <div className="absolute left-0 top-full mt-2 w-56 rounded-lg border border-border/50 bg-background/95 dark:bg-background/90 backdrop-blur-xl shadow-lg shadow-black/10 dark:shadow-black/20">
-                                                            <ul className="py-2">
-                                                                {(item as any).subItems.map((subItem: any, subIndex: number) => (
-                                                                    <li key={subIndex}>
-                                                                        <Link
-                                                                            href={subItem.href}
-                                                                            className="relative text-muted-foreground hover:text-accent-foreground hover:bg-accent block px-4 py-2 text-sm duration-150 after:absolute after:bottom-0 after:left-4 after:h-px after:w-0 after:bg-accent-foreground after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)]">
-                                                                            {subItem.name}
-                                                                        </Link>
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
+                                                        <div className="absolute left-0 top-full pt-2 w-56 z-50">
+                                                            <div className="rounded-lg border border-border/50 bg-background/95 dark:bg-background/90 backdrop-blur-xl shadow-lg shadow-black/10 dark:shadow-black/20">
+                                                                <ul className="py-2">
+                                                                    {(item as any).subItems.map((subItem: any, subIndex: number) => (
+                                                                        <li key={subIndex}>
+                                                                            <Link
+                                                                                href={subItem.href}
+                                                                                className="relative text-muted-foreground hover:text-accent-foreground hover:bg-accent block px-4 py-2 text-sm duration-150 after:absolute after:bottom-0 after:left-4 after:h-px after:w-0 after:bg-accent-foreground after:transition-all after:duration-300 hover:after:w-[calc(100%-2rem)]">
+                                                                                {subItem.name}
+                                                                            </Link>
+                                                                        </li>
+                                                                    ))}
+                                                                </ul>
+                                                            </div>
                                                         </div>
                                                     )}
                                                 </>
@@ -130,9 +132,9 @@ export const HeroHeader = () => {
                                 <Button
                                     asChild
                                     className="h-10 px-6 rounded-xl gap-2 font-medium">
-                                    <Link href="/contact/office">
+                                    <Link href="/contact">
                                         <Phone className="size-4" />
-                                        <span>Contact Office</span>
+                                        <span>Contact Us</span>
                                     </Link>
                                 </Button>
                             </div>

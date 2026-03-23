@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Calendar, User } from "lucide-react"
+import { PageHero } from "@/components/PageHero"
 
 export const metadata = blogMetadata
 
@@ -138,19 +139,11 @@ function Page() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
 
-            {/* Hero Section */}
-            <div className="bg-primary text-primary-foreground py-16">
-                <MaxWidthWrapper>
-                    <div className="text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                            Electrical Panel Insights for Salem Industries
-                        </h1>
-                        <p className="text-xl opacity-90 max-w-2xl mx-auto">
-                            Expert guidance on choosing, installing, and maintaining electrical panels in Salem and Tamil Nadu. Stay updated with the latest industry trends and best practices.
-                        </p>
-                    </div>
-                </MaxWidthWrapper>
-            </div>
+            <PageHero 
+                title="Electrical Panel Insights" 
+                subtitle="EXPERT GUIDANCE ON CHOOSING, INSTALLING, AND MAINTAINING ELECTRICAL PANELS" 
+                imageSrc="/images/panels.png" 
+            />
 
             <MaxWidthWrapper>
                 {/* Breadcrumb */}

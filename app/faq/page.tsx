@@ -6,6 +6,7 @@ import { faqs } from "@/lib/data"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MessageCircle, ArrowRight } from "lucide-react"
+import { PageHero } from "@/components/PageHero"
 
 export default function Page() {
     const breadcrumbSchema = generateBreadcrumbSchema([
@@ -28,19 +29,11 @@ export default function Page() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
-            {/* Hero Section */}
-            <div className="bg-primary text-primary-foreground py-16">
-                <MaxWidthWrapper>
-                    <div className="text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                            Frequently Asked Questions
-                        </h1>
-                        <p className="text-xl opacity-90 max-w-2xl mx-auto">
-                            Common questions about electrical panels, our products, and services in Salem, Tamil Nadu.
-                        </p>
-                    </div>
-                </MaxWidthWrapper>
-            </div>
+            <PageHero 
+                title="Frequently Asked Questions" 
+                subtitle="Common questions about electrical panels, our products, and services in Salem, Tamil Nadu." 
+                imageSrc="/images/our-services.png" 
+            />
 
             <MaxWidthWrapper>
                 {/* Breadcrumb */}

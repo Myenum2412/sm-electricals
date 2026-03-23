@@ -9,6 +9,7 @@ import Image from "next/image"
 import StatsSection from "@/components/stats"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { LinkPreview } from "@/components/ui/link-preview";
+import { PageHero } from "@/components/PageHero";
 
 export default function AboutPageContent() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -22,35 +23,11 @@ export default function AboutPageContent() {
 
     return (
         <>
-            {/* Full width hero */}
-            <div className="relative h-[500px] w-full overflow-hidden flex items-center justify-center">
-                <BlurFade inView={true} duration={0.8}>
-                    <Image
-                        src="/images/about-us-banner.png"
-                        alt="About SM ELECTRICAL"
-                        fill
-                        className="object-cover object-center scale-105"
-                        priority
-                        quality={100}
-                    />
-                </BlurFade>
-
-                {/* Gradient overlay for premium feel */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
-
-                {/* Centered Text Content */}
-                <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-                    <BlurFade inView={true} delay={0.2} direction="down">
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 drop-shadow-2xl">
-                            About SM ELECTRICAL
-                        </h1>
-                        <div className="h-1.5 w-24 bg-primary mx-auto mb-8 rounded-full shadow-lg" />
-                        <p className="text-white/90 text-sm md:text-lg lg:text-xl tracking-[0.2em] uppercase font-bold leading-relaxed drop-shadow-xl">
-                            DEPENDABLE ELECTRICAL SOLUTIONS THAT POWER PROGRESS
-                        </p>
-                    </BlurFade>
-                </div>
-            </div>
+            <PageHero 
+                title="About SM ELECTRICAL" 
+                subtitle="DEPENDABLE ELECTRICAL SOLUTIONS THAT POWER PROGRESS" 
+                imageSrc="/images/about-us-banner.png" 
+            />
 
             {/* Content container */}
             <MaxWidthWrapper>

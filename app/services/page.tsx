@@ -12,6 +12,7 @@ export const metadata = servicesMetadata
 
 import { services, projects } from "@/lib/data"
 import { ProductsCarousel } from "@/components/products/ProductsCarousel"
+import { PageHero } from "@/components/PageHero"
 
 
 function page() {
@@ -50,28 +51,11 @@ function page() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
             />
 
-            {/* Full width hero */}
-            <div className="relative h-[500px] w-full overflow-hidden">
-                <Image
-                    src="/images/our-services.png"
-                    alt="SM ELECTRICAL Services"
-                    fill
-                    className="object-cover object-center"
-                    priority
-                    quality={95}
-                />
-
-                {/* Optional overlay for readability */}
-                <div className="absolute inset-0 bg-black/40" />
-
-                {/* Bottom Center Text */}
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center px-4 w-full">
-                    <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                        Our Services
-                    </h1>
-                    <p className="text-white/90 text-sm lg:text-xl tracking-wide mt-2 uppercase font-medium">SUPPORTING CONTRACTORS, BUSINESSES, AND INDUSTRIAL CLIENTS</p>
-                </div>
-            </div>
+            <PageHero 
+                title="Our Services" 
+                subtitle="SUPPORTING CONTRACTORS, BUSINESSES, AND INDUSTRIAL CLIENTS" 
+                imageSrc="/images/our-services.png" 
+            />
 
             {/* Content container */}
             <MaxWidthWrapper>
