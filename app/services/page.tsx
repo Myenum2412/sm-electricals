@@ -13,6 +13,7 @@ export const metadata = servicesMetadata
 import { services, projects } from "@/lib/data"
 import { ProductsCarousel } from "@/components/products/ProductsCarousel"
 import { PageHero } from "@/components/PageHero"
+import CustomEngineeringCTA from "@/components/custom-engineering-cta"
 
 
 function page() {
@@ -127,6 +128,7 @@ function page() {
                     </div>
 
 
+                    <CustomEngineeringCTA />
                 </div>
             </MaxWidthWrapper>
         </>

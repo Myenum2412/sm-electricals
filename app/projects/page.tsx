@@ -7,6 +7,7 @@ import Image from "next/image"
 import StatsSection from "@/components/stats"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { PageHero } from "@/components/PageHero"
+import CustomEngineeringCTA from "@/components/custom-engineering-cta"
 
 export const metadata = {
     title: "Our Projects | SM ELECTRICAL",
@@ -86,6 +87,10 @@ function ProjectsPage() {
                             ))}
                         </div>
                     </section>
+                    
+                    <div className="mt-20">
+                        <CustomEngineeringCTA />
+                    </div>
                 </div>
             </MaxWidthWrapper>
         </>

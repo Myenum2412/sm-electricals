@@ -10,6 +10,7 @@ import StatsSection from "@/components/stats"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { LinkPreview } from "@/components/ui/link-preview";
 import { PageHero } from "@/components/PageHero";
+import CustomEngineeringCTA from "@/components/custom-engineering-cta";
 
 export default function AboutPageContent() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -219,6 +220,10 @@ export default function AboutPageContent() {
 
                     {/* Stats Section */}
                     <StatsSection />
+
+                    <div className="mt-12">
+                        <CustomEngineeringCTA />
+                    </div>
                 </div>
             </MaxWidthWrapper>
         </>

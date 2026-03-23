@@ -57,7 +57,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
 
     try {
       // Send form data to Formspree
-      const response = await fetch("https://formspree.io/f/mqaeveve", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -313,7 +313,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                       <Twitter className="h-5 w-5" />
                     </a>
                     <a
-                      href="https://wa.me/919360710100?text=Hi%20SM%20ELECTRICAL%2C%20I%20want%20to%20know%20more%20about%20your%20services."
+                      href="https://wa.me/919360710100"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary hover:scale-110 transition-all duration-200"

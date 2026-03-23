@@ -51,7 +51,7 @@ export function SampleTestForm({ trigger }: SampleTestFormProps) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/mqaeveve", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
