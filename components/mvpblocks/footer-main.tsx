@@ -54,9 +54,9 @@ const data = () => ({
   },
   socialLinks: [
     { icon: WhatsAppIcon, label: 'WhatsApp', href: 'https://wa.me/919360710100' },
-    { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com' },
+    { icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61578551044590' },
     { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com' },
-    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com' },
+    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/smelectrical._/' },
   ],
   bottomLinks: [
     { href: '#', label: 'Privacy Policy' },

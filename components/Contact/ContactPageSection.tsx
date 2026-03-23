@@ -277,7 +277,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                   <h3 className="font-semibold mb-3">Follow Us</h3>
                   <div className="flex flex-wrap items-center gap-3">
                     <a
-                      href="https://www.facebook.com"
+                      href="https://www.facebook.com/profile.php?id=61578551044590"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary hover:scale-110 transition-all duration-200"
@@ -286,7 +286,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                       <Facebook className="h-5 w-5" />
                     </a>
                     <a
-                      href="https://www.instagram.com"
+                      href="https://www.instagram.com/smelectrical._/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary hover:scale-110 transition-all duration-200"
