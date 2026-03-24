@@ -297,10 +297,10 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <a
-                      href="mailto:info@smelectrical.com"
+                      href="mailto:info@smelectrical.tech"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      info@smelectrical.com
+                      info@smelectrical.tech
                     </a>
                   </div>
                 </div>
