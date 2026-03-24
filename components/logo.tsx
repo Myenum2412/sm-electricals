@@ -8,7 +8,7 @@ export const Logo = ({ className }: { className?: string }) => {
             <div className="relative h-8 w-8 overflow-hidden rounded-md">
                 <Image src="/images/logo.png" alt="SM ELECTRICAL Logo" fill className="object-contain" priority />
             </div>
-            <span>ELECTRICAL</span>
+            <span>ELECTRICALS</span>
         </span>
     )
 }
