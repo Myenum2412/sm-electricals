@@ -52,7 +52,7 @@ export default function AboutPageContent() {
 
                     <div ref={scrollRef} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                         {/* Left side - Content */}
-                        <div className="space-y-8">
+                        <div className="order-last md:order-first space-y-8">
                             <BlurFade inView={true} delay={0.25} direction="up">
                                 <section>
                                     <h1 className="text-4xl font-bold lg:text-5xl mb-6 text-foreground">About SM ELECTRICAL</h1>
@@ -77,21 +77,21 @@ export default function AboutPageContent() {
                                 <section>
                                     <h2 className="text-3xl font-semibold mb-4 text-foreground">Our Story</h2>
                                     <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
-                                        <p>
+                                        <div className="mb-4">
                                             The journey of SM ELECTRICAL began in 2013 with a clear purpose: to provide dependable electrical equipment that businesses and communities can rely on every day.
-                                        </p>
-                                        <p>
+                                        </div>
+                                        <div className="mb-4">
                                             Starting with a focus on electrical panel manufacturing, the company steadily expanded its capabilities by combining technical expertise, industry experience, and customer-focused service. Over time, SM ELECTRICAL has grown into a trusted partner for contractors, builders, and industries seeking reliable electrical solutions.
-                                        </p>
-                                        <p>
+                                        </div>
+                                        <div className="mb-4">
                                             We are a proud member of the <LinkPreview url="https://bni-salem.in/salem-capital/en-IN/index" className="font-bold text-red-600">BNI Capital Chapter</LinkPreview>, which reflects our commitment to professional excellence, integrity, and building strong business relationships within our community.
-                                        </p>
-                                        <p>
+                                        </div>
+                                        <div className="mb-4">
                                             Our growth has been driven by a dedication to quality craftsmanship, continuous improvement, and strong client relationships. Every project we undertake reflects our commitment to delivering electrical systems that are efficient, safe, and built to last.
-                                        </p>
-                                        <p>
+                                        </div>
+                                        <div className="mb-4">
                                             Today, SM ELECTRICAL continues to evolve by adopting modern manufacturing practices while maintaining the values that shaped our foundation: integrity, quality, and reliability.
-                                        </p>
+                                        </div>
                                     </div>
                                 </section>
                             </BlurFade>
@@ -115,9 +115,9 @@ export default function AboutPageContent() {
                         </div>
 
                         {/* Right side - Images & Quick Links */}
-                        <div className="space-y-12 sticky top-24">
+                        <div className="order-first md:order-last space-y-12 md:sticky md:top-24">
                             <BlurFade inView={true} delay={0.5} direction="left">
-                                <div className="relative w-full h-[500px] md:h-[700px] overflow-hidden rounded-3xl shadow-2xl group border border-border/50">
+                                <div className="relative w-full h-[400px] md:h-[700px] overflow-hidden rounded-3xl shadow-2xl group border border-border/50">
                                     {/* Image 1 */}
                                     <motion.div
                                         style={{ opacity: opacity1 }}
@@ -129,7 +129,7 @@ export default function AboutPageContent() {
                                             fill
                                             priority
                                             quality={95}
-                                            className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                                            className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                                         />
                                     </motion.div>
 
@@ -144,7 +144,7 @@ export default function AboutPageContent() {
                                             fill
                                             priority
                                             quality={95}
-                                            className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                                            className="object-cover object-top transition-transform duration-700 group-hover:scale-110"
                                         />
                                     </motion.div>
 
