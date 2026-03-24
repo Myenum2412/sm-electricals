@@ -81,8 +81,8 @@ export default function HeroSection() {
                                             asChild
                                             size="lg"
                                             className="rounded-xl px-5 text-base">
-                                            <Link href="/panels">
-                                                <span className="text-nowrap">View Products</span>
+                                            <Link href="/projects">
+                                                <span className="text-nowrap">View Projects</span>
                                             </Link>
                                         </Button>
                                     </div>

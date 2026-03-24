@@ -21,7 +21,7 @@ export default function StatsSection() {
                 </div>
 
                 <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
-                    <TickerText value={1000} prefix="+" label="Panels Delivered" />
+                    <TickerText value={10000} prefix="+" label="Panels Delivered" />
                     <TickerText value={11} prefix="+" label="Years of Excellence" />
                     <TickerText value={100} suffix="%" label="Quality Assurance" />
                 </div>
