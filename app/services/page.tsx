@@ -92,6 +92,7 @@ function page() {
                         description="A showcase of our high-quality electrical installations and custom panel solutions across various industries."
                         products={projectProducts}
                         showImageOnly={true}
+                        showImagePopup={true}
                         redirectPath="/projects"
                     />
 

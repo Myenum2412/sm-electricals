@@ -604,16 +604,16 @@ export function getProductsBySubcategory(subcategory: PanelCategory): PanelProdu
 }
 
 export const projects = [
-    { title: "Industrial Power Distribution", image: "/images/projects/1.png" },
-    { title: "Custom Control Panel", image: "/images/projects/2.png" },
-    { title: "Main Switchboard Installation", image: "/images/projects/3.png" },
-    { title: "Automated APFC System", image: "/images/projects/4.png" },
-    { title: "Commercial SSB Panel", image: "/images/projects/5.png" },
-    { title: "Heavy Duty MV Panel", image: "/images/projects/6.png" },
-    { title: "Precision Motor Control", image: "/images/projects/7.png" },
-    { title: "Multi-Functional Relay Panel", image: "/images/projects/8.png" },
-    { title: "Industrial Changeover System", image: "/images/projects/9.png" },
-    { title: "Custom PLC Enclosure", image: "/images/projects/10.png" },
+    { title: "Industrial Power Distribution", image: "/images/projects/(1).png" },
+    { title: "Custom Control Panel", image: "/images/projects/(2).png" },
+    { title: "Main Switchboard Installation", image: "/images/projects/(3).png" },
+    { title: "Automated APFC System", image: "/images/projects/(4).png" },
+    { title: "Commercial SSB Panel", image: "/images/projects/(5).png" },
+    { title: "Heavy Duty MV Panel", image: "/images/projects/(6).png" },
+    { title: "Precision Motor Control", image: "/images/projects/(7).png" },
+    { title: "Multi-Functional Relay Panel", image: "/images/projects/(8).png" },
+    { title: "Industrial Changeover System", image: "/images/projects/(9).png" },
+    { title: "Custom PLC Enclosure", image: "/images/projects/(10).png" },
     { title: "Secondary Distribution Board", image: "/images/projects/11.png" },
     { title: "Advanced Metering Panel", image: "/images/projects/12.png" },
     { title: "High-Voltage Protection Panel", image: "/images/projects/13.png" },
@@ -626,7 +626,6 @@ export const projects = [
     { title: "Safety Compliant Panelboard", image: "/images/projects/20.png" },
     { title: "Factory 24/7 Power Hub", image: "/images/projects/21.png" },
     { title: "Compact Distribution Unit", image: "/images/projects/22.png" },
-    { title: "Heavy Industry Gateway", image: "/images/projects/23.png" },
     { title: "Global Standard Control Unit", image: "/images/projects/24.png" }
 ];
 

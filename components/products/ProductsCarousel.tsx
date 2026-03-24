@@ -15,6 +15,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import Image from "next/image";
 
@@ -31,6 +32,7 @@ export interface Gallery4Props {
   description?: string;
   showImageOnly?: boolean;
   redirectPath?: string;
+  showImagePopup?: boolean;
   products: {
     id: number;
     name: string;
@@ -52,12 +54,17 @@ const ProductsCarousel = ({
   description = "Discover our best selling products and see why they are the best.",
   showImageOnly = false,
   redirectPath = "",
+  showImagePopup = false,
 }: Gallery4Props) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<(typeof products)[0] | null>(null);
+  const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
+  const [popupImage, setPopupImage] = useState<string | null>(null);
+  const [popupTitle, setPopupTitle] = useState<string | null>(null);
+  const [popupDescription, setPopupDescription] = useState<string | null>(null);
 
   const plugin = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
@@ -138,7 +145,12 @@ const ProductsCarousel = ({
               >
                 <div 
                   onClick={() => {
-                    if (redirectPath) {
+                    if (showImagePopup) {
+                      setPopupImage(product.image);
+                      setPopupTitle(product.name);
+                      setPopupDescription(product.description);
+                      setIsImagePopupOpen(true);
+                    } else if (redirectPath) {
                       window.location.href = redirectPath;
                     } else {
                       setSelectedProduct(product);
@@ -190,9 +202,9 @@ const ProductsCarousel = ({
       </div>
 
       <Dialog open={!!selectedProduct} onOpenChange={(open) => !open && setSelectedProduct(null)}>
-        <DialogContent className="sm:max-w-[800px] p-0 overflow-hidden bg-background border-none">
+        <DialogContent className="sm:max-w-[800px] p-0 overflow-hidden bg-background border-none gap-0">
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="relative aspect-square md:aspect-auto h-[400px] md:h-full">
+            <div className="relative aspect-square md:aspect-auto h-[300px] md:h-full">
               <Image
                 src={selectedProduct?.image || ""}
                 alt={selectedProduct?.name || ""}
@@ -229,6 +241,33 @@ const ProductsCarousel = ({
                   </Button>
                 </div>
               </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Image Only Popup Viewer */}
+      <Dialog open={isImagePopupOpen} onOpenChange={setIsImagePopupOpen}>
+        <DialogContent className="max-w-screen-xl w-full min-w-[95vw] max-h-[95vh] h-[90vh] p-0 flex flex-col overflow-hidden bg-background border-none gap-0">
+          <DialogHeader className="px-6 pt-6 pb-4 shrink-0 w-full">
+            <DialogTitle className="text-2xl font-bold">
+              {popupTitle}
+            </DialogTitle>
+            {popupDescription && (
+              <DialogDescription>{popupDescription}</DialogDescription>
+            )}
+          </DialogHeader>
+          <div className="flex-1 px-6 pb-6 min-h-0 overflow-hidden">
+            <div className="relative w-full h-full border rounded-md overflow-hidden bg-muted/20">
+               {popupImage && (
+                 <Image
+                   src={popupImage}
+                   alt={popupTitle || "Project Image"}
+                   fill
+                   className="object-contain"
+                   priority
+                 />
+               )}
             </div>
           </div>
         </DialogContent>
