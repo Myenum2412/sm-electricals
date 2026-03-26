@@ -22,7 +22,7 @@ const blogPosts = [
         category: "Panel Selection Guide",
         date: "2024-01-15",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["electrical panel Salem", "panel selection guide", "industrial panels Tamil Nadu"]
     },
     {
@@ -33,7 +33,7 @@ const blogPosts = [
         category: "Energy Efficiency",
         date: "2024-01-10",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["APFC panels Salem", "power factor correction Tamil Nadu", "energy savings panels"]
     },
     {
@@ -44,7 +44,7 @@ const blogPosts = [
         category: "Buyer Guide",
         date: "2024-01-08",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["best panel manufacturer Salem", "electrical panel suppliers Tamil Nadu", "ISO certified panel maker Salem"]
     },
     {
@@ -55,7 +55,7 @@ const blogPosts = [
         category: "Industry Insights",
         date: "2024-01-05",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["industrial panels Salem", "textile industry panels Tamil Nadu", "manufacturing electrical panels"]
     },
     {
@@ -66,7 +66,7 @@ const blogPosts = [
         category: "Maintenance",
         date: "2024-01-05",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["panel maintenance Salem", "electrical panel care Tamil Nadu", "industrial panel upkeep"]
     },
     {
@@ -77,7 +77,7 @@ const blogPosts = [
         category: "Technical Guide",
         date: "2023-12-28",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["LT panels vs HT panels", "low voltage high voltage panels", "panel voltage selection Salem"]
     },
     {
@@ -88,7 +88,7 @@ const blogPosts = [
         category: "Technical Guide",
         date: "2023-12-22",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["MCC panels Salem", "motor control center Tamil Nadu", "industrial motor panels"]
     },
     {
@@ -99,7 +99,7 @@ const blogPosts = [
         category: "Safety",
         date: "2023-12-20",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["electrical safety Salem", "Tamil Nadu electrical standards", "IS 8623 compliance panels"]
     },
     {
@@ -110,7 +110,7 @@ const blogPosts = [
         category: "Trends",
         date: "2023-12-15",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["smart panels Salem", "IoT electrical panels", "automation panels Tamil Nadu"]
     },
     {
@@ -121,7 +121,7 @@ const blogPosts = [
         category: "Automation",
         date: "2023-12-10",
         author: "SM ELECTRICAL Team",
-        image: "/images/panels.png",
+        image: "/images/product-hero.png",
         keywords: ["control panels Salem", "PLC automation Tamil Nadu", "industrial automation panels"]
     }
 ]
@@ -142,7 +142,7 @@ function Page() {
             <PageHero 
                 title="Electrical Panel Insights" 
                 subtitle="EXPERT GUIDANCE ON CHOOSING, INSTALLING, AND MAINTAINING ELECTRICAL PANELS" 
-                imageSrc="/images/panels.png" 
+                imageSrc="/images/product-hero.png" 
             />
 
             <MaxWidthWrapper>
