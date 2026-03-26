@@ -75,7 +75,7 @@ function ProjectsPage() {
                     <section id="photos">
                         <div className="columns-2 gap-4 sm:columns-3 lg:columns-4">
                             {projects.map((project, i) => (
-                                <BlurFade key={i} delay={0.25 + i * 0.05} inView>
+                                <BlurFade key={i} delay={0.1 + (i % 10) * 0.05} inView>
                                     <div 
                                         onClick={() => setSelectedProject(project)}
                                         className="group relative mb-4 overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer border border-border/50"

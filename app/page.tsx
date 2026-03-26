@@ -19,7 +19,7 @@ const projectProducts = projects.map((project, index) => ({
   reviewCount: 0,
   size: "",
   benefits: []
-}));
+})).slice(0, 12);
 
 export default function Home() {
   return (
