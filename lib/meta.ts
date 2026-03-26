@@ -8,19 +8,19 @@ export const defaultMetadata: Metadata = {
         default: "SM ELECTRICAL - Electrical Panels Manufacturer in Salem, Tamil Nadu",
         template: "%s | SM ELECTRICAL"
     },
-    description: "Leading manufacturer and supplier of electrical panels in Salem, Tamil Nadu. We supply LT Panels, HT Panels, Control Panels, MCC Panels, PCC Panels, APFC Panels, ATS Panels, and Distribution Boards for industrial and commercial applications. ISO 9001:2015 certified.",
+    description: "Leading manufacturer and supplier of electrical panels in Salem and across Tamil Nadu. We supply LT, HT, Control, MCC, PCC, and APFC Panels to Chennai, Coimbatore, Madurai, Trichy, Erode, and Tiruppur. ISO 9001:2015 certified.",
     keywords: [
-        "Electrical Panels Salem",
-        "Panel Board Suppliers Salem",
-        "Industrial Electrical Panels Salem",
-        "LT Panels Tamil Nadu",
-        "HT Panels Salem",
-        "Control Panels manufacturer",
-        "MCC Panels India",
-        "APFC Panels Salem",
-        "Distribution Boards Tamil Nadu",
-        "Electrical Panel Manufacturer",
-        "Power Factor Correction Panels",
+        "Electrical Panels Tamil Nadu",
+        "Panel Board Suppliers Chennai",
+        "Industrial Electrical Panels Coimbatore",
+        "LT Panels Madurai",
+        "HT Panels Trichy",
+        "Control Panels manufacturer Salem",
+        "MCC Panels Tiruppur",
+        "APFC Panels Erode",
+        "Distribution Boards Hosur",
+        "Electrical Panel Manufacturer South India",
+        "Power Factor Correction Panels Tamil Nadu",
         "Motor Control Center Salem"
     ],
     authors: [{ name: "SM ELECTRICAL" }],
@@ -128,15 +128,17 @@ export const contactMetadata: Metadata = {
 
 export const productMetadata = (productName: string, productDescription: string): Metadata => {
     return {
-        title: `${productName} in Salem | SM ELECTRICAL - Tamil Nadu`,
-        description: `${productName} available in Salem, Tamil Nadu. ${productDescription} Get competitive pricing and expert consultation from leading panel manufacturer in Salem.`,
+        title: `${productName} in Tamil Nadu | Chennai, Coimbatore, Madurai, Salem`,
+        description: `${productName} available across Tamil Nadu, including Chennai, Coimbatore, Madurai, and Salem. ${productDescription} High-quality panels from leading manufacturer in South India.`,
         keywords: [
-            `${productName} Salem`,
+            `${productName} Chennai`,
+            `${productName} Coimbatore`,
+            `${productName} Madurai`,
+            `${productName} Trichy`,
             `${productName} Tamil Nadu`,
-            `${productName} manufacturer`,
-            `${productName} supplier India`,
-            `Electrical Panels in Salem`,
-            `Panel Board Suppliers Salem`,
+            `${productName} manufacturer India`,
+            `Electrical Panels in Tamil Nadu`,
+            `Panel Board Suppliers South India`,
             `Industrial ${productName} Salem`
         ],
         openGraph: {

@@ -76,9 +76,9 @@ function page() {
                     </Breadcrumb>
 
                     <div className="mb-16">
-                        <h2 className="text-4xl font-bold text-foreground mb-6">Expert Electrical Services</h2>
+                        <h2 className="text-4xl font-bold text-foreground mb-6">Expert Electrical Services in Tamil Nadu</h2>
                         <p className="text-xl text-muted-foreground w-full leading-relaxed">
-                            Beyond manufacturing, SM ELECTRICAL provides a range of services to support contractors, businesses, and industrial clients. Our team ensures that your power distribution systems are designed, delivered, and maintained to the highest standards.
+                            Beyond manufacturing, SM ELECTRICAL provides a range of services to support contractors, businesses, and industrial clients across Tamil Nadu. From our base in Salem, we serve major industrial hubs including Chennai, Coimbatore, Madurai, Trichy, and Erode, ensuring that your power distribution systems are designed, delivered, and maintained to the highest standards.
                         </p>
                     </div>
 

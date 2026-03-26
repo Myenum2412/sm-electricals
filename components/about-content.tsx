@@ -58,7 +58,7 @@ export default function AboutPageContent() {
                                     <h1 className="text-4xl font-bold lg:text-5xl mb-6 text-foreground">About SM ELECTRICAL</h1>
                                     <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                                         <p>
-                                            Established in 2013 by Karthi V and headed by Gowtham, SM ELECTRICAL specializes in delivering high-quality electrical panels and efficient power distribution solutions for diverse sectors.
+                                            Established in 2013 by Karthi V and headed by Gowtham, SM ELECTRICAL specializes in delivering high-quality electrical panels and efficient power distribution solutions for major industrial hubs across Tamil Nadu, including Chennai, Coimbatore, Madurai, and Salem.
                                         </p>
                                         <p>
                                             With over a decade of experience in the electrical industry, SM ELECTRICAL has built a reputation for delivering safe, reliable, and efficient electrical systems. Our expertise lies in designing and manufacturing electrical panels that meet the operational demands of contractors, builders, industrial facilities, and electrical professionals.
@@ -67,7 +67,7 @@ export default function AboutPageContent() {
                                             As a manufacturer and supplier, we maintain strict quality control at every stage from design and component selection to fabrication and final testing. This ensures that every product leaving our facility performs with durability, safety, and long-term reliability.
                                         </p>
                                         <p>
-                                            Our electrical solutions power factories, commercial buildings, residential projects, and large infrastructure developments.
+                                            Our electrical solutions power factories in Chennai's automotive corridors, textile units in Coimbatore and Tiruppur, and infrastructure developments throughout South India.
                                         </p>
                                     </div>
                                 </section>
@@ -81,7 +81,7 @@ export default function AboutPageContent() {
                                             The journey of SM ELECTRICAL began in 2013 with a clear purpose: to provide dependable electrical equipment that businesses and communities can rely on every day.
                                         </div>
                                         <div className="mb-4">
-                                            Starting with a focus on electrical panel manufacturing, the company steadily expanded its capabilities by combining technical expertise, industry experience, and customer-focused service. Over time, SM ELECTRICAL has grown into a trusted partner for contractors, builders, and industries seeking reliable electrical solutions.
+                                            Starting with a focus on electrical panel manufacturing in Salem, the company steadily expanded its reach across Tamil Nadu by combining technical expertise, industry experience, and customer-focused service. Over time, SM ELECTRICAL has grown into a trusted partner for industries in Trichy, Erode, Hosur, and Madurai seeking reliable power solutions.
                                         </div>
                                         <div className="mb-4">
                                             We are a proud member of the <LinkPreview url="https://bni-salem.in/salem-capital/en-IN/index" className="font-bold text-red-600">BNI Capital Chapter</LinkPreview>, which reflects our commitment to professional excellence, integrity, and building strong business relationships within our community.

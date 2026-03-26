@@ -42,7 +42,7 @@ export default function Home() {
                 Our Comprehensive Electrical Solutions
               </h2>
               <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-6">
-                Beyond manufacturing, we provide end-to-end support for your electrical infrastructure needs.
+                From our manufacturing base in Salem, we provide end-to-end electrical solutions for industrial hubs across Tamil Nadu, including Chennai, Coimbatore, and Madurai.
               </p>
             </BlurFade>
             <HoverEffect items={services} />

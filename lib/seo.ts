@@ -1,4 +1,4 @@
-import { businessLocation, panelSolutions, faqs, testimonials } from "./data"
+import { businessLocation, panelSolutions, faqs, testimonials, targetCities } from "./data"
 
 export function generateOrganizationSchema(name: string, url: string) {
     return {
@@ -66,10 +66,10 @@ export function generateLocalBusinessSchema() {
             "ratingValue": businessLocation.rating,
             "reviewCount": businessLocation.reviewCount
         },
-        "areaServed": {
-            "@type": "State",
-            "name": "Tamil Nadu"
-        },
+        "areaServed": targetCities.map(city => ({
+            "@type": "City",
+            "name": city
+        })),
         "serviceType": [
             "Electrical Panel Manufacturing",
             "Control Panel Supply",
@@ -225,10 +225,10 @@ export function generateDetailedOrganizationSchema() {
             "https://www.instagram.com/smelectrical",
             "https://www.linkedin.com/company/smelectrical"
         ],
-        "areaServed": {
-            "@type": "State",
-            "name": "Tamil Nadu"
-        },
+        "areaServed": targetCities.map(city => ({
+            "@type": "City",
+            "name": city
+        })),
         "serviceType": [
             "Electrical Panel Manufacturing",
             "Industrial Electrical Solutions",

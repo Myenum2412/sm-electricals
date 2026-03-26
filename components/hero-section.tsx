@@ -58,7 +58,7 @@ export default function HeroSection() {
                                     delay={0.5}
                                     as="p"
                                     className="mt-8 max-w-2xl text-pretty text-lg">
-                                    Specializing in the manufacture of high-quality electrical panels and custom-engineered power distribution systems for commercial and industrial needs.
+                                    Trusted manufacturer of high-quality electrical panels and custom-engineered power distribution systems, serving major industrial hubs across Tamil Nadu.
                                 </TextEffect>
 
                                 <AnimatedGroup

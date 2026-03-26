@@ -711,28 +711,28 @@ export const services = [
 // FAQ data for Salem-specific content
 export const faqs = [
     {
-        question: "What electrical panel types are most popular in Salem industries?",
-        answer: "In Salem's industrial landscape, LT Panels, MCC Panels, and APFC Panels are the most sought after. Salem has a strong presence of textile mills, steel industries, and manufacturing units that require robust power distribution and motor control solutions. Our LT Panels are particularly popular due to their reliability in handling the power demands of these industries."
+        question: "What electrical panel types are most popular in Tamil Nadu industries?",
+        answer: "In Tamil Nadu's industrial landscape, including Chennai, Coimbatore, and Salem, LT Panels, MCC Panels, and APFC Panels are highly sought after. Chennai's automotive hubs and Coimbatore's manufacturing sector require robust power distribution and motor control solutions. Our panels are designed to meet the electrical demands of various industries across the state."
     },
     {
-        question: "How do I choose the right electrical panel for my factory in Salem?",
-        answer: "Choosing the right panel depends on your power requirements, voltage needs, and application. For most Salem industrial units, we recommend starting with a load analysis. Consider factors like: total connected load, power factor, short-circuit rating requirements, and future expansion plans. Our team in Salem provides free consultation to help you select the appropriate panel configuration."
+        question: "How do I choose the right electrical panel for my factory in Chennai or Coimbatore?",
+        answer: "Choosing the right panel depends on your power requirements, voltage needs, and application. For industrial units in Chennai, Coimbatore, or Madurai, we recommend starting with a load analysis. Consider factors like total connected load, power factor, short-circuit rating, and future expansion. Our team provides consultations across all major cities in Tamil Nadu."
     },
     {
         question: "What certifications should I look for when buying electrical panels in Tamil Nadu?",
-        answer: "Look for panels with ISO 9001:2015 certification, compliance with IS 8623 (Indian Standard for Low Voltage Switchgear), and IEC 61439 for international standards. SM ELECTRICAL provides panels with all relevant certifications including BIS, ensuring your installations meet Tamil Nadu Electrical Inspectorate requirements."
+        answer: "Look for panels with ISO 9001:2015 certification, compliance with IS 8623 (Indian Standard for Low Voltage Switchgear), and IEC 61439. SM ELECTRICAL provides panels that meet all relevant certifications, ensuring your installations meet Tamil Nadu Electrical Inspectorate requirements in cities like Chennai, Trichy, and Erode."
     },
     {
-        question: "Do you offer on-site installation services in Salem?",
-        answer: "Yes, we provide comprehensive installation guidance and can coordinate with local electrical contractors in Salem and throughout Tamil Nadu. Our technical team ensures proper installation, testing, and commissioning of all panel types. We also offer annual maintenance contracts (AMC) for ongoing support."
+        question: "Do you offer on-site installation support in cities like Madurai or Tiruppur?",
+        answer: "Yes, we provide comprehensive installation guidance and can coordinate with local electrical contractors in Madurai, Tiruppur, Hosur, and throughout Tamil Nadu. Our technical team ensures proper installation, testing, and commissioning of all panel types. We also offer annual maintenance contracts (AMC) state-wide."
     },
     {
-        question: "What is the delivery time for custom electrical panels in Salem?",
-        answer: "Standard panels typically ship within 2-3 weeks. Custom panels with specific requirements may take 4-6 weeks depending on complexity. We maintain sufficient stock of common panel types for quick delivery to Salem and across Tamil Nadu."
+        question: "What is the delivery time for custom electrical panels in Tamil Nadu?",
+        answer: "Standard panels typically ship within 2-3 weeks. Custom panels with specific requirements may take 4-6 weeks depending on complexity. We maintain efficient logistics to ensure timely delivery to major cities like Chennai, Coimbatore, and beyond."
     },
     {
-        question: "How do APFC panels help reduce electricity bills in Salem?",
-        answer: "APFC (Automatic Power Factor Correction) panels help maintain optimal power factor (typically above 0.95). Tamil Nadu Electricity Board offers incentives for maintaining good power factor, and industries can avoid penalties. APFC panels can reduce electricity bills by 5-15% through improved power quality and reduced reactive power charges."
+        question: "How do APFC panels help reduce electricity bills for industries in Erode or Salem?",
+        answer: "APFC (Automatic Power Factor Correction) panels help maintain optimal power factor (typically above 0.95). In industrial hubs like Erode and Salem, the Tamil Nadu Electricity Board offers incentives for maintaining good power factor. APFC panels can reduce electricity bills by 10-15% through improved power quality and reduced reactive power charges."
     }
 ];
 
@@ -749,26 +749,34 @@ export const testimonials = [
     {
         name: "M. Chandrasekaran",
         company: "Chennai Textiles Ltd",
-        location: "Salem Region, Tamil Nadu",
+        location: "Chennai, Tamil Nadu",
         rating: 5,
-        text: "The APFC panels from SM ELECTRICAL helped us improve our power factor from 0.82 to 0.97. We've seen significant reduction in our electricity bills. Great technical support and professional service.",
+        text: "The APFC panels from SM ELECTRICAL helped us improve our power factor significantly across our Chennai units. We've seen a notable reduction in our electricity bills. Great technical support and professional service.",
         service: "APFC Panel"
     },
     {
         name: "S. Venkatesh",
-        company: "Venkatesh Food Processing",
-        location: "Salem, Tamil Nadu",
+        company: "Coimbatore Engineering Works",
+        location: "Coimbatore, Tamil Nadu",
         rating: 5,
-        text: "We needed custom control panels for our food processing line. SM ELECTRICAL delivered exactly what we needed with proper quality certifications. Their team understood our requirements perfectly.",
+        text: "We needed custom control panels for our automated line in Coimbatore. SM ELECTRICAL delivered exactly what we needed with proper quality certifications. Their team understood our requirements perfectly.",
         service: "Control Panels"
     },
     {
         name: "A. Palani",
-        company: "Salem Auto Components",
-        location: "Salem, Tamil Nadu",
+        company: "Madurai Auto Components",
+        location: "Madurai, Tamil Nadu",
         rating: 5,
-        text: "Reliable MCC panels for our automotive parts manufacturing unit. The panels have been running continuously for 5 years without any issues. SM ELECTRICAL is our go-to supplier for all electrical panel needs.",
+        text: "Reliable MCC panels for our automotive parts manufacturing unit in Madurai. The panels have been running continuously for 5 years without any issues. SM ELECTRICAL is our go-to supplier for all electrical panel needs.",
         service: "MCC Panels"
+    },
+    {
+        name: "K. Selvam",
+        company: "Trichy Rice Mills",
+        location: "Trichy, Tamil Nadu",
+        rating: 5,
+        text: "Excellent service and high-quality distribution boards for our facilities in Trichy. The team is very knowledgeable and helped us choose the right specifications.",
+        service: "Distribution Boards"
     }
 ];
 
@@ -809,3 +817,18 @@ export const businessLocation = {
     rating: 4.8,
     reviewCount: 45
 }
+
+export const targetCities = [
+    "Chennai",
+    "Coimbatore",
+    "Madurai",
+    "Tiruchirappalli",
+    "Salem",
+    "Erode",
+    "Tiruppur",
+    "Hosur",
+    "Tuticorin",
+    "Nellai"
+]
+
+export const serviceAreaDescription = "Serving major industrial hubs across Tamil Nadu, including Chennai, Coimbatore, Madurai, Trichy, Erode, and Tiruppur."

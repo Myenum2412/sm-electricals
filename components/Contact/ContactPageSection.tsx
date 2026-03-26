@@ -200,7 +200,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                 Keep in touch with us
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                At SM ELECTRICAL, our commitment is simple deliver dependable electrical solutions that power progress. Connect with us to discuss your electrical needs or request a professional consultation.
+                At SM ELECTRICAL, our commitment is simple—deliver dependable electrical solutions that power progress across Tamil Nadu. Whether you're in Chennai, Coimbatore, Madurai, or Salem, connect with us to discuss your electrical needs or request a professional consultation.
               </p>
             </div>
 
@@ -384,7 +384,7 @@ export default function ContactPageSection({ type = 'all' }: { type?: 'all' | 'o
                 Send a Message
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Have a project in mind or need a custom panel solution? Send us a message and our technical team will get back to you promptly.
+                Have a project in mind or need a custom panel solution for your facility in Chennai, Coimbatore, or any other industrial hub in Tamil Nadu? Send us a message and our technical team will get back to you promptly.
               </p>
             </div>
 
