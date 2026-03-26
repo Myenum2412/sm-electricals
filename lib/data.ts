@@ -626,6 +626,7 @@ export const projects = [
     { title: "Safety Compliant Panelboard", image: "/images/projects/20.png" },
     { title: "Factory 24/7 Power Hub", image: "/images/projects/21.png" },
     { title: "Compact Distribution Unit", image: "/images/projects/22.png" },
+    { title: "Smart Panel Control", image: "/images/projects/23.png" },
     { title: "Global Standard Control Unit", image: "/images/projects/24.png" },
     { title: "Heavy Industrial Incomer", image: "/images/projects/25.png" },
     { title: "Low Voltage Feeder Pillar", image: "/images/projects/26.png" },
